@@ -19,6 +19,11 @@ function App() {
             <Profile user={user} />
           </Route>
         </Switch>
+        <Switch>
+          <Route path="/dates">
+            <MyDates user={user}></MyDates>
+          </Route>
+        </Switch>
       </main>
       {user && (
         <aside>
@@ -26,16 +31,12 @@ function App() {
             <Route path="/profile">
               <ProfileSidebar user={user} />
             </Route>
+            <Route path="/dates">
+              <ProfileSidebar user={user} />
+            </Route>
           </Switch>
         </aside>
       )}
-      <main>
-        <Switch>
-          <Route path="/dates">
-            <MyDates user={user}></MyDates>
-          </Route>
-        </Switch>
-      </main>
     </Router>
   );
 }
