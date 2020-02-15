@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Nav from "./components/Nav";
 import ProfileSidebar from "./components/ProfileSidebar";
 import Profile from "./components/Profile";
+import MatchesMade from "./components/MatchesMade";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.scss";
@@ -19,14 +20,22 @@ function App() {
           </Route>
         </Switch>
       </main>
-      {user &&
-      <aside>
+      {user && (
+        <aside>
+          <Switch>
+            <Route path="/profile">
+              <ProfileSidebar user={user} />
+            </Route>
+          </Switch>
+        </aside>
+      )}
+      <main>
         <Switch>
-          <Route path="/profile">
-            <ProfileSidebar user={user} />
+          <Route path="/matches">
+            <MatchesMade user={user}></MatchesMade>
           </Route>
         </Switch>
-      </aside>}
+      </main>
     </Router>
   );
 }
