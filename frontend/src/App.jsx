@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Nav from "./components/Nav";
 import ProfileSidebar from "./components/ProfileSidebar";
 import Profile from "./components/Profile";
-import MatchesMade from "./components/MatchesMade";
+import MatchesMade from "./components/MyDates";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.scss";
@@ -31,8 +31,8 @@ function App() {
       )}
       <main>
         <Switch>
-          <Route path="/matches">
-            <MatchesMade user={user}></MatchesMade>
+          <Route path="/mydates">
+            <MyDates user={user}></MyDates>
           </Route>
         </Switch>
       </main>
