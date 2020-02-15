@@ -1,0 +1,14 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+
+  &:nth-child(2) {
+    margin-left: auto;
+  }
+
+  * {
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
