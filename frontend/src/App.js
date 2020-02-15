@@ -4,7 +4,7 @@ import ProfileSidebar from "./components/ProfileSidebar";
 import Profile from "./components/Profile";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   const [user, setUser] = useState({ name: "Aaron" });
@@ -20,13 +20,13 @@ function App() {
         </Switch>
       </main>
       {user &&
-      <sidebar>
+      <aside>
         <Switch>
           <Route path="/profile">
             <ProfileSidebar user={user} />
           </Route>
         </Switch>
-      </sidebar>}
+      </aside>}
     </Router>
   );
 }
