@@ -7,7 +7,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.scss";
 import { getUser } from "./api";
 
+<<<<<<< HEAD
 export default function App() {
+=======
+function App() {
+>>>>>>> 27d7625ba75f07a484cd073a9dc4b4a45f3d975e
   const [user, setUser] = useState({
     name: "Aaron",
     age: 28,
