@@ -1,6 +1,6 @@
 #root {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 300px 4fr;
   grid-template-rows: 1fr 9fr;
   grid-template-areas:
     "sidebar nav"
@@ -8,22 +8,27 @@
 }
 
 nav {
+  background-color: #edfffe;
   grid-area: nav;
+  border-bottom: 1px solid #dddddd;
 
   .logo {
     font-style: italic;
     font-weight: bold;
     font-size: 48px;
     letter-spacing: 0.03em;
-    color: #00536D;
-    text-shadow: -2px -4px 0px #CFFFF3, 2px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #00536d;
+    text-shadow: -2px -4px 0px #cffff3, 2px 4px 0px rgba(0, 0, 0, 0.25);
   }
 }
 
 aside {
   grid-area: sidebar;
+  background-color: #cffff4;
+  border-right: 1px solid #dddddd;
 }
 
 main {
   grid-area: main;
+  background-color: #edfffe;
 }
