@@ -3,7 +3,7 @@ import "./MatchmakeeCard.scss";
 
 const MatchmakeeCard = props => {
   return (
-    <li class="matchmakee_card">
+    <li className="matchmakee_card">
       <img src={props.img}></img>
       <div>
         <header>

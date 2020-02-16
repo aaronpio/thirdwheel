@@ -5,10 +5,18 @@ import Profile from "./components/Profile";
 import MyDates from "./components/MyDates";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.scss";
-import { getUser } from "./api"
+import { getUser } from "./api";
 
 function App() {
-  const [user, setUser] = useState({ name: "Aaron", age: 28, points: 75, image_url: "https://avatars0.githubusercontent.com/u/24718190?s=460&v=4", gender: "Male", looking_for: ["Female"], city: "Montreal"});
+  const [user, setUser] = useState({
+    name: "Aaron",
+    age: 28,
+    points: 75,
+    image_url: "https://avatars0.githubusercontent.com/u/24718190?s=460&v=4",
+    gender: "Male",
+    looking_for: ["Female"],
+    city: "Montreal"
+  });
   // useEffect(() => {
   //   getUser(1).then(_user => {console.log(_user);setUser(_user)})
   // }, [])
@@ -22,12 +30,7 @@ function App() {
             <Profile user={user} />
           </Route>
           <Route path="/dates">
-            <MyDates user={user}></MyDates>
-          </Route>
-        </Switch>
-        <Switch>
-          <Route path="/dates">
-            <MyDates user={user}></MyDates>
+            <MyDates user={user} />
           </Route>
         </Switch>
       </main>

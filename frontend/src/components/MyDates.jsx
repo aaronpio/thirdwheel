@@ -42,7 +42,7 @@ const MyDates = () => {
 
   const matchmakeeCardComponents = users.map((user, index) => (
     <MatchmakeeCard
-      key={index}
+      key={index} //use user.id later
       name={user.name}
       age={user.age}
       bio={user.bio}
@@ -51,7 +51,7 @@ const MyDates = () => {
   ));
 
   return (
-    <div class="my_dates">
+    <div className="my_dates">
       <h2>Your Dates</h2>
       <ul>{matchmakeeCardComponents}</ul>
     </div>
