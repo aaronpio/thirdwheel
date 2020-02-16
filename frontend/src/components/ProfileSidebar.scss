@@ -1,0 +1,12 @@
+aside {
+  display: flex;
+  height: 100vh;
+  padding: 10%;
+  flex-direction: column;
+  // justify-content: space-between;
+  // align-items: center;
+}
+
+aside * {
+  color: #00536d;
+}
