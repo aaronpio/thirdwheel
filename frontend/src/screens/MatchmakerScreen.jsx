@@ -6,7 +6,7 @@ export default function MatchmakerScreen({ user }) {
   return (
     <>
       <main>
-        <MatchmakerGrid user={user} />
+        <MatchmakerGrid candidates={[]} />
       </main>
       <aside>
         <MatchmakerSidebar user={user} />
