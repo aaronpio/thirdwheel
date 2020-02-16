@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames";
-// import thumb from "../../.././public/thumb.png";
 
 const ThumbsUp = props => {
   const buttonClass = classNames("button", {
@@ -10,7 +9,7 @@ const ThumbsUp = props => {
 
   return (
     <button className={buttonClass} onClick={props.onClick}>
-      <img src="/thumb.png" alt="thumb" />
+      <img id="thumbBtn" src="/thumb.png" alt="thumb" />
     </button>
   );
 };

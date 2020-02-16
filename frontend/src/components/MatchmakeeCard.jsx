@@ -13,7 +13,6 @@ const MatchmakeeCard = props => {
         </header>
         <p align="left"> {props.bio}</p>
       </div>
-      <ThumbsUp />
     </li>
   );
 };
