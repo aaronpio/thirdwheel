@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./ProfileSidebar.scss"
+import Picture from "./Picture"
 
 export default function ProfileSidebar({ user }) {
   return (
   <>
+    <Picture {...user} />
     <div>
-      <h2 className="username">{user.name}</h2>
       <p>Points: <b>{user.points}</b></p>
-    </div>
-    <div>
-      <Link to="/dates">My Dates</Link>
-      <Link to="/matches">Matches Made</Link>
-      <Link to="/logout">Logout</Link>
+      <Link to="/dates"><p>My Dates</p></Link>
+      <Link to="/matches"><p>Matches Made</p></Link>
+      <Link to="/logout"><p>Log Out</p></Link>
     </div>
   </>
   );

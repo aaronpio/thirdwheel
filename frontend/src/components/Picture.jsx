@@ -1,11 +1,14 @@
 import React from "react";
 import "./Picture.scss";
 
-export default function Picture({ user }) {
+export default function Picture({ name, image_url }) {
   return (
-    <nav>
-      <Link to="/"><h1 className="logo">ThirdWheel</h1></Link>
-      {user && <Link to="/profile">My Profile</Link>}
-    </nav>
+    <div>
+      <div
+        className="profilepic"
+        style={{ background: `url(${image_url})`, backgroundSize: "contain" }}
+      ></div>
+      <h2 className="picname">{name}</h2>
+    </div>
   );
 }
