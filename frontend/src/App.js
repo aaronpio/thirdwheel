@@ -37,10 +37,7 @@ export default function App() {
       {user && (
         <aside>
           <Switch>
-            <Route path="/profile">
-              <ProfileSidebar user={user} />
-            </Route>
-            <Route path="/dates">
+            <Route path={["/dates", "/profile"]}>
               <ProfileSidebar user={user} />
             </Route>
           </Switch>
