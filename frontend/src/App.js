@@ -3,6 +3,7 @@ import Nav from "./components/Nav";
 import ProfileSidebar from "./components/ProfileSidebar";
 import Profile from "./components/Profile";
 import MyDates from "./components/MyDates";
+import MatchmakerGrid from "./components/MatchmakerGrid";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.scss";
 import { getUser } from "./api";
@@ -31,6 +32,9 @@ export default function App() {
           </Route>
           <Route path="/dates">
             <MyDates user={user} />
+          </Route>
+          <Route path="/matchmaker">
+            <MatchmakerGrid />
           </Route>
         </Switch>
       </main>
