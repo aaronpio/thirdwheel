@@ -1,5 +1,6 @@
 import React from "react";
 import "./MatchmakeeCard.scss";
+import ThumbsUp from "./buttons/ThumbsUp";
 
 const MatchmakeeCard = props => {
   return (
@@ -12,6 +13,7 @@ const MatchmakeeCard = props => {
         </header>
         <p align="left"> {props.bio}</p>
       </div>
+      <ThumbsUp />
     </li>
   );
 };
