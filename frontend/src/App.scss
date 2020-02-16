@@ -8,18 +8,7 @@
 }
 
 nav {
-  background-color: #edfffe;
   grid-area: nav;
-  border-bottom: 1px solid #dddddd;
-
-  .logo {
-    font-style: italic;
-    font-weight: bold;
-    font-size: 48px;
-    letter-spacing: 0.03em;
-    color: #00536d;
-    text-shadow: -2px -4px 0px #cffff3, 2px 4px 0px rgba(0, 0, 0, 0.25);
-  }
 }
 
 aside {
@@ -31,4 +20,24 @@ aside {
 main {
   grid-area: main;
   background-color: #edfffe;
+}
+
+* {
+  font-family: "Nunito", sans-serif;
+  color: #2d2d2d;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Lobster Two", cursive;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
