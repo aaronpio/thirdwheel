@@ -17,11 +17,3 @@ const MatchmakeeCard = props => {
 };
 
 export default MatchmakeeCard;
-
-// <InteractiveMatchmakeeCard
-// key={index} //use user.id later
-// name={user.name}
-// age={user.age}
-// bio={user.bio}
-// img={user.img}
-// />

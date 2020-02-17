@@ -10,33 +10,33 @@ const MyDates = () => {
       age: 22,
       bio:
         "yoooooooooooooooooooooooooooooooooooooyo coooooooooffffffffffffdddddddddddddddddddddooooool this is my bio thanks for reading. yo this is my bio thanks for reading. yo this is my bio thanks for reading. ",
-      img: "https://randomuser.me/api/portraits/men/40.jpg"
+      image_url: "https://randomuser.me/api/portraits/men/40.jpg"
     },
     {
       name: "jane",
       age: 24,
       bio: "hey this is my bio thanks for reading",
-      img: "https://randomuser.me/api/portraits/women/34.jpg"
+      image_url: "https://randomuser.me/api/portraits/women/34.jpg"
     },
     {
       name: "John",
       age: 22,
       bio:
         "yo this is my bio thanks for reading. yo this is my bio thanks for reading. yo this is my bio thanks for reading. ",
-      img: "https://randomuser.me/api/portraits/men/40.jpg"
+      image_url: "https://randomuser.me/api/portraits/men/40.jpg"
     },
     {
       name: "Hermione",
       age: 22,
       bio:
         "yo this is my bio thanks for reading. yo this is my bio thanks for reading. yo this is my bio thanks for reading. ",
-      img: "https://randomuser.me/api/portraits/men/40.jpg"
+      image_url: "https://randomuser.me/api/portraits/men/40.jpg"
     },
     {
       name: "jane Goodall",
       age: 24,
       bio: "hey this is my bio thanks for reading",
-      img: "https://randomuser.me/api/portraits/women/34.jpg"
+      image_url: "https://randomuser.me/api/portraits/women/34.jpg"
     }
   ];
 
