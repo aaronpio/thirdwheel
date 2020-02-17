@@ -5,6 +5,13 @@ import { getCandidates } from "../api";
 
 export default function MatchmakerScreen({ user }) {
   const [candidates, setCandidates] = useState([]);
+  const [topPick, setTopPick] = useState(null);
+  const [bottomPick, setBottomPick] = useState(null);
+
+  const select = userId => {
+    if (topPick === null) setTopPick(userId);
+  };
+
   useEffect(() => {
     getCandidates().then(res => {
       console.log(res.data);
@@ -18,7 +25,7 @@ export default function MatchmakerScreen({ user }) {
         <MatchmakerGrid candidates={candidates} />
       </main>
       <aside>
-        <MatchmakerSidebar picks={[]} />
+        <MatchmakerSidebar picks={[topPick, bottomPick]} />
       </aside>
     </>
   );
