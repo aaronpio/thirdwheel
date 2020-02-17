@@ -1,6 +1,6 @@
 import React from "react";
-import MatchmakeeCard from "./MatchmakeeCard";
-import "./MyDates.module.scss";
+import InteractiveMatchmakeeCard from "./InteractiveMatchmakeeCard";
+import styles from "./MyDates.module.scss";
 import { Link } from "react-router-dom";
 
 const MyDates = () => {
@@ -9,7 +9,7 @@ const MyDates = () => {
       name: "Aaron",
       age: 22,
       bio:
-        "yooooooooooooooooooooooooooooooooooooooooooooooooyo this is my bio thanks for reading. yo this is my bio thanks for reading. yo this is my bio thanks for reading. ",
+        "yoooooooooooooooooooooooooooooooooooooyo coooooooooffffffffffffdddddddddddddddddddddooooool this is my bio thanks for reading. yo this is my bio thanks for reading. yo this is my bio thanks for reading. ",
       img: "https://randomuser.me/api/portraits/men/40.jpg"
     },
     {
@@ -41,17 +41,14 @@ const MyDates = () => {
   ];
 
   const matchmakeeCardComponents = users.map((user, index) => (
-    <MatchmakeeCard
+    <InteractiveMatchmakeeCard
       key={index} //use user.id later
-      name={user.name}
-      age={user.age}
-      bio={user.bio}
-      img={user.img}
+      user={user}
     />
   ));
 
   return (
-    <div className="my_dates">
+    <div className={styles.my_dates}>
       <h2>Your Dates</h2>
       <ul>{matchmakeeCardComponents}</ul>
     </div>

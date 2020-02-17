@@ -1,5 +1,4 @@
-.matchmakee_card {
-  z-index: 1;
+.card {
   display: flex;
   flex-direction: row;
   justify-items: flex-start;
@@ -8,13 +7,14 @@
   height: 12em;
   width: 35em;
   background-color: white;
-  border-radius: 22px;
+  border-radius: 6.1em;
   border-style: solid;
   border-color: lightgray;
   word-wrap: break-word;
 
   img {
-    border-radius: 20px 0px 0px 20px;
+    z-index: 0;
+    border-radius: 50% 0px 0px 50%;
     height: 12em;
     width: 12em;
   }
@@ -24,6 +24,7 @@
     flex-direction: column;
     justify-items: flex-start;
     justify-content: flex-start;
+    border-radius: 6em;
     width: 22em;
     background-color: white;
 
@@ -33,7 +34,7 @@
       justify-items: space-between;
       justify-content: space-between;
       padding-left: 1em;
-      width: 21em;
+      width: 18em;
       height: 3em;
       background-color: white;
 
@@ -55,7 +56,9 @@
       background-color: white;
       margin: 0;
       padding: 1em;
+      padding-bottom: 0em;
       height: 9em;
+      border-radius: 5em;
       word-break: break-word;
     }
   }

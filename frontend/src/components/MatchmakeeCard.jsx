@@ -1,20 +1,28 @@
 import React from "react";
-import "./MatchmakeeCard.module.scss";
+import styles from "./MatchmakeeCard.module.scss";
 import ThumbsUp from "./buttons/ThumbsUp";
 
 const MatchmakeeCard = props => {
   return (
-    <li className="matchmakee_card">
-      <img src={props.img}></img>
+    <li className={styles.card}>
+      <img src={props.user.img}></img>
       <div>
         <header>
-          <h2 id="name">{props.name}</h2>
-          <h2>{props.age}</h2>
+          <h2 id="name">{props.user.name}</h2>
+          <h2>{props.user.age}</h2>
         </header>
-        <p align="left"> {props.bio}</p>
+        <p align="left"> {props.user.bio}</p>
       </div>
     </li>
   );
 };
 
 export default MatchmakeeCard;
+
+// <InteractiveMatchmakeeCard
+// key={index} //use user.id later
+// name={user.name}
+// age={user.age}
+// bio={user.bio}
+// img={user.img}
+// />
