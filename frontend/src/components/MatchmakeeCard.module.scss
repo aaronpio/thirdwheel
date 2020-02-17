@@ -63,6 +63,8 @@
       height: 9em;
       border-radius: 5em;
       word-break: break-word;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }
