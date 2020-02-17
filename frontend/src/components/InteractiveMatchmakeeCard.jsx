@@ -1,6 +1,6 @@
 import React from "react";
 import MatchmakeeCard from "./MatchmakeeCard";
-import "./InteractiveMatchmakeeCard.scss";
+import "./InteractiveMatchmakeeCard.module.scss";
 
 export default function InteractiveMatchmakeeCard({ user }) {
   return (

@@ -1,6 +1,10 @@
 import React from "react";
+<<<<<<< HEAD
 import "./MatchmakeeCard.scss";
 import ThumbsUp from "./buttons/ThumbsUp";
+=======
+import "./MatchmakeeCard.module.scss";
+>>>>>>> master
 
 const MatchmakeeCard = props => {
   return (
