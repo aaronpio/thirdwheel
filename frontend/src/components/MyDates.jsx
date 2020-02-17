@@ -1,5 +1,5 @@
 import React from "react";
-import InteractiveMatchmakeeCard from "./InteractiveMatchmakeeCard";
+import InteractiveDateCard from "./InteractiveDateCard";
 import styles from "./MyDates.module.scss";
 import { Link } from "react-router-dom";
 
@@ -41,7 +41,7 @@ const MyDates = () => {
   ];
 
   const matchmakeeCardComponents = users.map((user, index) => (
-    <InteractiveMatchmakeeCard
+    <InteractiveDateCard
       key={index} //use user.id later
       user={user}
     />

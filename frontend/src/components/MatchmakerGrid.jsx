@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./MatchmakerGrid.module.scss";
-import MatchmakeeCard from "./MatchmakeeCard";
+import InteractiveMatchmakeeCard from "./InteractiveMatchmakeeCard";
 import Button from "./Button";
 
 export default function MatchmakerGrid({ candidates }) {
@@ -8,7 +8,7 @@ export default function MatchmakerGrid({ candidates }) {
     <>
       <div className={styles.grid}>
         {candidates.map(user => (
-          <MatchmakeeCard user={user} />
+          <InteractiveMatchmakeeCard user={user} />
         ))}
       </div>
       <Button onClick={() => {}}>Shuffle It!</Button>

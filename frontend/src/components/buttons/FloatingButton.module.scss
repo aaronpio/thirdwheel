@@ -1,0 +1,35 @@
+.button {
+  height: 2.25em;
+  width: 2.25em;
+  border-radius: 50%;
+  position: relative;
+  bottom: 2.5em;
+  border: 4px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 64px;
+  font-size: 1.5em;
+  padding: 0.25em;
+  margin: 0em;
+  color: white;
+  font-weight: bold;
+
+  &.up_button {
+    left: 4em;
+    background: #58ff69;
+  }
+
+  &.down_button {
+    left: 4.5em;
+    background: #ff5858;
+  }
+
+  &.check_button {
+    left: 4em;
+    background: #58ff69;
+  }
+
+  &.x_button {
+    left: 4.5em;
+    background: #ff5858;
+  }
+}
