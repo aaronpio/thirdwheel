@@ -9,7 +9,7 @@ const MyDates = () => {
       name: "Aaron",
       age: 22,
       bio:
-        "yoooooooooooooooooooooooooooooooooooooyo coooooooooffffffffffffdddddddddddddddddddddooooool this is my bio thanks for reading. yo this is my bio thanks for reading. yo this is my bio thanks for reading. ",
+        "yoooooooooooooooooooooooooofff fffffffffffffffoooooooooooyo ggggggggggggggggggggggg coooooooooffffffffffffdddddddddddddddddddddooooool this is my bio thanks for reading. yo this is my bio thanks for reading. yo this is my bio thanks for reading. ",
       image_url: "https://randomuser.me/api/portraits/men/40.jpg"
     },
     {
