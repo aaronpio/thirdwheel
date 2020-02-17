@@ -7,7 +7,7 @@ export default function MatchmakerGrid({ candidates }) {
     <>
       <div className="grid">
         {candidates.map(user => (
-          <MatchmakeeCard />
+          <MatchmakeeCard user={user} />
         ))}
       </div>
     </>
