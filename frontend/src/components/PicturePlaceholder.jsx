@@ -8,7 +8,6 @@ export default function PicturePlaceholder({}) {
     backgroundColor: "#beeee2",
     width: "228px",
     height: "228px",
-    margin: "auto",
     display: "flex"
   };
 

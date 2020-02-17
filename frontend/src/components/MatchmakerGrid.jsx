@@ -3,7 +3,7 @@ import styles from "./MatchmakerGrid.module.scss";
 import InteractiveMatchmakeeCard from "./InteractiveMatchmakeeCard";
 import Button from "./Button";
 
-export default function MatchmakerGrid({ candidates, select }) {
+export default function MatchmakerGrid({ candidates, select, shuffle }) {
   return (
     <>
       <div className={styles.grid}>
@@ -11,7 +11,7 @@ export default function MatchmakerGrid({ candidates, select }) {
           <InteractiveMatchmakeeCard user={user} select={select} />
         ))}
       </div>
-      <Button onClick={() => {}}>Shuffle It!</Button>
+      <Button onClick={() => shuffle}>Shuffle It!</Button>
     </>
   );
 }
