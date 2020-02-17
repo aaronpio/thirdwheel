@@ -10,7 +10,19 @@ export default function MatchmakerScreen({ user }) {
 
   const select = userId => {
     if (topPick === null) setTopPick(userId);
+    else if (bottomPick === null) {
+      setBottomPick(userId);
+    } else {
+      console.log("to do; swap bottom with selected");
+    }
   };
+
+  const removeFromSidebar = userId => {
+    if ((userId = bottomPick.id)) setBottomPick(null);
+    if ((userId = topPick.id)) setTopPick(null);
+  };
+
+  const removeFromGrid = userId => {};
 
   useEffect(() => {
     getCandidates().then(res => {
@@ -22,10 +34,13 @@ export default function MatchmakerScreen({ user }) {
   return (
     <>
       <main>
-        <MatchmakerGrid candidates={candidates} />
+        <MatchmakerGrid candidates={candidates} select={select} />
       </main>
       <aside>
-        <MatchmakerSidebar picks={[topPick, bottomPick]} />
+        <MatchmakerSidebar
+          picks={[topPick, bottomPick]}
+          removeFromSidebar={removeFromSidebar}
+        />
       </aside>
     </>
   );
