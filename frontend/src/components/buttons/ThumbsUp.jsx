@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import "./ThumbsUp.module.scss";
 
 const ThumbsUp = props => {
   const buttonClass = classNames("button", {
