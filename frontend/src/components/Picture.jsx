@@ -1,7 +1,8 @@
 import React from "react";
 import "./Picture.module.scss";
 
-export default function Picture({ name, image_url }) {
+export default function Picture({ user }) {
+  const { name, image_url } = user;
   const style = {
     backgroundImage: `url(${image_url})`,
     backgroundSize: "contain",
@@ -10,7 +11,7 @@ export default function Picture({ name, image_url }) {
     width: "228px",
     height: "228px",
     margin: "auto"
-  }
+  };
 
   return (
     <div>

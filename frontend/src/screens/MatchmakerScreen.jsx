@@ -8,14 +8,16 @@ export default function MatchmakerScreen({ user }) {
   const [topPick, setTopPick] = useState(null);
   const [bottomPick, setBottomPick] = useState(null);
 
-  const select = userId => {
-    if (topPick === null) setTopPick(userId);
+  const select = user => {
+    if (topPick === null) setTopPick(user);
     else if (bottomPick === null) {
-      setBottomPick(userId);
+      setBottomPick(user);
     } else {
       console.log("to do; swap bottom with selected");
     }
   };
+
+  const shuffle = () => {};
 
   const removeFromSidebar = userId => {
     if ((userId = bottomPick.id)) setBottomPick(null);

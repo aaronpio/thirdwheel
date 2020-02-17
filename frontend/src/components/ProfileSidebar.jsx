@@ -6,7 +6,7 @@ import Picture from "./Picture";
 export default function ProfileSidebar({ user }) {
   return (
     <>
-      <Picture {...user} />
+      <Picture user={user} />
       <div>
         <p>
           Points: <b>{user.points}</b>
