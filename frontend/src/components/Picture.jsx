@@ -2,12 +2,19 @@ import React from "react";
 import "./Picture.module.scss";
 
 export default function Picture({ name, image_url }) {
+  const style = {
+    backgroundImage: `url(${image_url})`,
+    backgroundSize: "contain",
+    borderRadius: "228px",
+    boxShadow: "inset 8px 8px 0px rgba(0, 0, 0, 0.25)",
+    width: "228px",
+    height: "228px",
+    margin: "auto"
+  }
+
   return (
     <div>
-      <div
-        className="profilepic"
-        style={{ background: `url(${image_url})`, backgroundSize: "contain" }}
-      ></div>
+      <div style={style}></div>
       <h2 className="picname">{name}</h2>
     </div>
   );

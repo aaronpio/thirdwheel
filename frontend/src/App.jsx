@@ -17,9 +17,13 @@ export default function App() {
     looking_for: ["Female"],
     city: "Montreal"
   });
-  // useEffect(() => {
-  //   getUser(1).then(_user => {console.log(_user);setUser(_user)})
-  // }, [])
+
+  useEffect(() => {
+    getUser(2).then(res => {
+      console.log(res.data)
+      setUser(res.data);
+    });
+  }, []);
 
   return (
     <Router>
