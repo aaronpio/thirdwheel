@@ -3,9 +3,9 @@ import classNames from "classnames";
 import styles from "./ThumbButton.module.scss";
 
 const ThumbButton = props => {
-  const buttonClass = classNames(styles.button.up_button, {
-    ".up_button": props.up_button,
-    ".down_button": props.down_button
+  const buttonClass = classNames(styles.button, {
+    [styles.up_button]: props.up_button,
+    [styles.down_button]: props.down_button
   });
 
   return (

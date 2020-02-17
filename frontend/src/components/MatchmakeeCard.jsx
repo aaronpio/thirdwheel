@@ -4,7 +4,7 @@ import styles from "./MatchmakeeCard.module.scss";
 const MatchmakeeCard = props => {
   return (
     <li className={styles.card}>
-      <img src={props.user.img}></img>
+      <img src={props.user.image_url}></img>
       <div>
         <header>
           <h2 id="name">{props.user.name}</h2>
@@ -17,11 +17,3 @@ const MatchmakeeCard = props => {
 };
 
 export default MatchmakeeCard;
-
-// <InteractiveMatchmakeeCard
-// key={index} //use user.id later
-// name={user.name}
-// age={user.age}
-// bio={user.bio}
-// img={user.img}
-// />
