@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import MatchmakeeCard from "./MatchmakeeCard";
 import styles from "./InteractiveMatchmakeeCard.module.scss";
 import FloatingButton from "./buttons/FloatingButton";
+import LoadingCard from "./LoadingCard";
 
 export default function InteractiveMatchmakeeCard({ user, select }) {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const selectAndLoad = () => {
     setLoading(true);
@@ -15,14 +16,20 @@ export default function InteractiveMatchmakeeCard({ user, select }) {
 
   return (
     <div className={styles.interactive_card}>
-      <MatchmakeeCard user={user} />
-      <FloatingButton
-        check_button
-        user={user}
-        message={"O"}
-        onClick={selectAndLoad}
-      />
-      <FloatingButton x_button user={user} message={"X"} />
+      {loading ? (
+        <LoadingCard />
+      ) : (
+        <>
+          <MatchmakeeCard user={user} />
+          <FloatingButton
+            check_button
+            user={user}
+            message={"O"}
+            onClick={selectAndLoad}
+          />
+          <FloatingButton x_button user={user} message={"X"} />
+        </>
+      )}
     </div>
   );
 }

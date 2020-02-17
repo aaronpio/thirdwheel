@@ -1,0 +1,27 @@
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-start;
+  justify-content: flex-start;
+  margin: 2em;
+  height: 12em;
+  width: 35em;
+  background-color: white;
+  border-radius: 6.1em;
+  border-style: solid;
+  border-color: lightgray;
+
+  .loading {
+    filter: contrast(20%);
+    margin: auto;
+    width: 10em;
+    animation: rotate 1s linear infinite;
+  }
+}
