@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import produce from "immer";
 import MatchmakerGrid from "../components/MatchmakerGrid";
 import MatchmakerSidebar from "../components/MatchmakerSidebar";
-import { getCandidates } from "../api";
+import { getCandidates, getUser } from "../api";
 
 export default function MatchmakerScreen({ user }) {
   const [candidates, setCandidates] = useState([]);
@@ -15,6 +16,13 @@ export default function MatchmakerScreen({ user }) {
     } else {
       console.log("to do; swap bottom with selected");
     }
+    return getUser(11).then(res => {
+      const newCandidates = produce(candidates, draft => {
+        const index = candidates.findIndex(usr => usr === user);
+        draft[index] = res.data;
+      });
+      setCandidates(newCandidates);
+    });
   };
 
   const removeFromSidebar = userId => {
