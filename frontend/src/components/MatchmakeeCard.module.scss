@@ -35,11 +35,12 @@
       justify-content: space-between;
       border-radius: 8em;
       padding-left: 1em;
-      width: 18em;
+      padding-bottom: 0.5em;
+      width: 17em;
       height: 3em;
       background-color: white;
 
-      h2 {
+      h1 {
         margin: 0;
         padding-top: 0.4em;
         color: #00536d;
@@ -49,9 +50,8 @@
         background-color: white;
       }
 
-      #name {
-        padding-top: 0.1em;
-        font-size: 2em;
+      h2 {
+        color: #00536d;
       }
     }
 
@@ -59,6 +59,7 @@
       background-color: white;
       margin: 0;
       padding: 1em;
+      padding-top: 0em;
       padding-bottom: 0em;
       height: 9em;
       border-radius: 0em 0em 5em 0em;
