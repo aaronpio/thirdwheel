@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Nav.module.scss";
+import styles from "./Nav.module.scss";
 
 export default function Nav({ user }) {
   return (
     <nav>
       <Link to="/">
-        <h1 className="logo">ThirdWheel</h1>
+        <h1 className={styles.logo}>ThirdWheel</h1>
       </Link>
       {user && <Link to="/matchmaker">Matchmaker</Link>}
       {user && <Link to="/profile">My Profile</Link>}
