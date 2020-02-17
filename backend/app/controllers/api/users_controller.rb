@@ -1,4 +1,9 @@
 class Api::UsersController < ApplicationController
+  def shuffle
+    users = User.take 6
+    render json: users
+  end
+
   def index
     render json: User.all
   end
