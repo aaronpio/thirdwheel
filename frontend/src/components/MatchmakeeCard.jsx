@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./MatchmakeeCard.module.scss";
-import ThumbsUp from "./buttons/ThumbsUp";
 
 const MatchmakeeCard = props => {
   return (
