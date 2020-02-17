@@ -1,5 +1,5 @@
 import React from "react";
-import "./MatchmakerGrid.scss";
+import "./MatchmakerGrid.module.scss";
 import MatchmakeeCard from "./MatchmakeeCard";
 
 export default function MatchmakerGrid({ candidates }) {

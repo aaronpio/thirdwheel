@@ -1,5 +1,5 @@
 import React from "react";
-import "./MatchmakeeCard.scss";
+import "./MatchmakeeCard.module.scss";
 
 const MatchmakeeCard = props => {
   return (

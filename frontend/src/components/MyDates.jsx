@@ -1,6 +1,6 @@
 import React from "react";
 import MatchmakeeCard from "./MatchmakeeCard";
-import "./MyDates.scss";
+import "./MyDates.module.scss";
 import { Link } from "react-router-dom";
 
 const MyDates = () => {

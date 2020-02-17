@@ -1,5 +1,5 @@
 import React from "react";
-import "./Picture.scss";
+import "./Picture.module.scss";
 
 export default function Picture({ name, image_url }) {
   return (

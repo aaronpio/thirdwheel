@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./ProfileSidebar.scss";
+import "./ProfileSidebar.module.scss";
 import Picture from "./Picture";
 
 export default function ProfileSidebar({ user }) {

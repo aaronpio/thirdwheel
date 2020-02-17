@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Nav from "./components/Nav";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.scss";
+import "./App.module.scss";
 import ProfileScreen from "./screens/ProfileScreen";
 import MyDatesScreen from "./screens/MyDatesScreen";
 import MatchmakerScreen from "./screens/MatchmakerScreen";
