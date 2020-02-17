@@ -9,6 +9,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
+    sleep(1.25)
     render json: User.find(params[:id])
   end
 end

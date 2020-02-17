@@ -7,8 +7,8 @@ const MatchmakeeCard = props => {
       <img src={props.user.image_url}></img>
       <div>
         <header>
-          <h2 id="name">{props.user.name}</h2>
-          <h2>{props.user.age}</h2>
+          <h1 className="name">{props.user.name}</h1>
+          <h2 className="age">{props.user.age}</h2>
         </header>
         <p align="left"> {props.user.bio}</p>
       </div>

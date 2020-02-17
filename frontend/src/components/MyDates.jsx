@@ -1,5 +1,5 @@
 import React from "react";
-import InteractiveMatchmakeeCard from "./InteractiveMatchmakeeCard";
+import InteractiveDateCard from "./InteractiveDateCard";
 import styles from "./MyDates.module.scss";
 import { Link } from "react-router-dom";
 
@@ -9,7 +9,7 @@ const MyDates = () => {
       name: "Aaron",
       age: 22,
       bio:
-        "yoooooooooooooooooooooooooooooooooooooyo coooooooooffffffffffffdddddddddddddddddddddooooool this is my bio thanks for reading. yo this is my bio thanks for reading. yo this is my bio thanks for reading. ",
+        "yoooooooooooooooooooooooooofff fffffffffffffffoooooooooooyo ggggggggggggggggggggggg coooooooooffffffffffffdddddddddddddddddddddooooool this is my bio thanks for reading. yo this is my bio thanks for reading. yo this is my bio thanks for reading. ",
       image_url: "https://randomuser.me/api/portraits/men/40.jpg"
     },
     {
@@ -41,7 +41,7 @@ const MyDates = () => {
   ];
 
   const matchmakeeCardComponents = users.map((user, index) => (
-    <InteractiveMatchmakeeCard
+    <InteractiveDateCard
       key={index} //use user.id later
       user={user}
     />
