@@ -7,11 +7,14 @@
   height: 12em;
   width: 35em;
   background-color: white;
-  border-radius: 0em 5em 5em 0em;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: rgba(0, 0, 0, 0.4);
+  border-radius: 6em 6em 6em 6em;
   word-wrap: break-word;
+  box-shadow: inset 8px 8px 0px rgba(0, 0, 0, 0.15);
 
   div {
-    box-shadow: inset -8px 8px 0px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     justify-items: flex-start;
@@ -21,15 +24,15 @@
 
     header {
       display: flex;
-      background-color: rgba(0,0,0,0);
+      background-color: rgba(0, 0, 0, 0);
       flex-direction: row;
       justify-items: space-between;
       justify-content: space-between;
-      margin-top: 1em;
+      margin-top: 0.75em;
       padding-left: 1em;
       padding-bottom: 0.5em;
       width: 17em;
-      height: 1em;
+      height: 2em;
       background-color: white;
 
       h1 {
@@ -40,6 +43,7 @@
       }
 
       h2 {
+        //margin-top: 0;
         color: #00536d;
       }
     }
@@ -47,8 +51,9 @@
     p {
       background-color: white;
       padding: 1em;
+      padding-top: 0em;
       height: 9em;
-      border-radius: 0em 0em 2em 0em;
+      border-radius: 0em 0em 5em 0em;
       word-break: break-word;
       overflow: hidden;
       text-overflow: ellipsis;
