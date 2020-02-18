@@ -21,7 +21,7 @@ export default function MatchmakerGrid({
           />
         ))}
       </div>
-      <Button onClick={() => shuffle}>Shuffle It!</Button>
+      <Button onClick={() => shuffle()}>Shuffle It!</Button>
     </>
   );
 }
