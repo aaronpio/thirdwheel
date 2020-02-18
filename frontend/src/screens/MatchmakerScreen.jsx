@@ -61,6 +61,11 @@ export default function MatchmakerScreen({ user }) {
   };
 
   const fetchCandidates = () => {
+    const newCandidates = produce(candidates, draft => {
+      draft = candidates.map(usr => usr === null);
+    });
+    setCandidates(newCandidates);
+
     getCandidates().then(res => {
       console.log(res.data);
       setCandidates(res.data);
