@@ -4,7 +4,11 @@ import Picture from "./Picture";
 import FloatingButton from "./FloatingButton";
 import Button from "./Button";
 
-export default function MatchmakerSidebar({ picks, removeFromSidebar }) {
+export default function MatchmakerSidebar({
+  picks,
+  removeFromSidebar,
+  confirmMatch
+}) {
   return (
     <article>
       {picks.map((pick, index) => {
@@ -21,7 +25,7 @@ export default function MatchmakerSidebar({ picks, removeFromSidebar }) {
           </div>
         );
       })}
-      <Button>It's a Match</Button>
+      <Button onClick={confirmMatch}>It's a Match</Button>
     </article>
   );
 }

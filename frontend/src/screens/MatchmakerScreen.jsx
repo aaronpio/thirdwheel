@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import produce from "immer";
 import MatchmakerGrid from "../components/MatchmakerGrid";
 import MatchmakerSidebar from "../components/MatchmakerSidebar";
-import { getCandidates, getUser, getRandomUser } from "../api";
+import { getCandidates, getUser, getRandomUser, createMatch } from "../api";
 import styles from "./MatchmakerScreen.module.scss";
 
 export default function MatchmakerScreen({ user }) {
@@ -44,6 +44,12 @@ export default function MatchmakerScreen({ user }) {
     });
   };
 
+  const confirmMatch = () => {
+    createMatch(topPick, bottomPick).then(res => console.log(res));
+    setTopPick(null);
+    setBottomPick(null);
+  };
+
   const removeFromSidebar = _user => {
     if (_user === bottomPick) setBottomPick(null);
     if (_user === topPick) setTopPick(null);
@@ -76,6 +82,7 @@ export default function MatchmakerScreen({ user }) {
         <MatchmakerSidebar
           picks={[topPick, bottomPick]}
           removeFromSidebar={removeFromSidebar}
+          confirmMatch={confirmMatch}
         />
       </aside>
     </>

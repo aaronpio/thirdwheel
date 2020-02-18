@@ -13,3 +13,7 @@ export function getRandomUser() {
 export function getCandidates() {
   return axios.get("/users/shuffle");
 }
+
+export function createMatch() {
+  return axios.post("/matches/new");
+}

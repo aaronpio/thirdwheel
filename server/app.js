@@ -19,6 +19,7 @@ db.connect();
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+const matchesRouter = require("./routes/matches");
 
 app.use(logger("dev"));
 app.use(express.json());
