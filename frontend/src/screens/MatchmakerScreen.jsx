@@ -22,6 +22,16 @@ export default function MatchmakerScreen({ user }) {
     });
   };
 
+  const selectRemove = user => {
+    return getUser(16).then(res => {
+      const newCandidates = produce(candidates, draft => {
+        const index = candidates.findIndex(usr => usr === user);
+        draft[index] = res.data;
+      });
+      setCandidates(newCandidates);
+    });
+  };
+
   const removeFromSidebar = _user => {
     if (_user === bottomPick) setBottomPick(null);
     if (_user === topPick) setTopPick(null);
@@ -46,6 +56,7 @@ export default function MatchmakerScreen({ user }) {
         <MatchmakerGrid
           candidates={candidates}
           select={select}
+          selectRemove={selectRemove}
           shuffle={fetchCandidates}
         />
       </main>
