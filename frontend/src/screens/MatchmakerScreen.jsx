@@ -9,17 +9,6 @@ export default function MatchmakerScreen({ user }) {
   const [topPick, setTopPick] = useState(null);
   const [bottomPick, setBottomPick] = useState(null);
 
-  // const getNewRandomUser = () => {
-  //   const randomNum = Math.floor(Math.random() * 35) + 1;
-
-  //   return getUser(randomNum).then(res => {
-  //     const newCandidates = produce(candidates, draft => {
-  //       const index = candidates.findIndex(usr => usr === user);
-  //       draft[index] = res.data;
-  //     });
-  //   });
-  // };
-
   const select = user => {
     if (topPick === null) setTopPick(user);
     else setBottomPick(user);
@@ -30,7 +19,7 @@ export default function MatchmakerScreen({ user }) {
     });
     setCandidates(newCandidates);
 
-    return getRandomUser().then(res => {
+    return getUser(11).then(res => {
       const newCandidates = produce(candidates, draft => {
         const index = candidates.findIndex(usr => usr === user);
         draft[index] = res.data;
@@ -46,7 +35,7 @@ export default function MatchmakerScreen({ user }) {
     });
     setCandidates(newCandidates);
 
-    return getRandomUser().then(res => {
+    return getUser(12).then(res => {
       const newCandidates = produce(candidates, draft => {
         const index = candidates.findIndex(usr => usr === user);
         draft[index] = res.data;

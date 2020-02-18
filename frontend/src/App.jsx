@@ -15,15 +15,16 @@ export default function App() {
     image_url: "https://avatars0.githubusercontent.com/u/24718190?s=460&v=4",
     gender: "Male",
     looking_for: ["Female"],
-    city: "Montreal"
+    city: "Montreal",
+    bio: "HEY whats up yall?"
   });
 
-  useEffect(() => {
-    getUser(2).then(res => {
-      console.log(res.data)
-      setUser(res.data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   getUser(2).then(res => {
+  //     console.log(res.data)
+  //     setUser(res.data);
+  //   });
+  // }, []);
 
   return (
     <Router>

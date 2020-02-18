@@ -2,8 +2,25 @@ aside {
   display: flex;
   height: 100vh;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  align-content: center;
   align-items: center;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  button {
+    margin: 0 auto;
+  }
+
+  div {
+    height: 20em;
+    margin-bottom: 2em;
+  }
 }
 
 aside * {

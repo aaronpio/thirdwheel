@@ -1,4 +1,19 @@
-h3 {
-  color: #ff00b8;
-  text-align: right;
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  h3 {
+    color: #ff00b8;
+    text-align: right;
+    flex: 0 20%;
+    margin-right: 0 5%;
+  }
+  p {
+    flex: 0 70%;
+    text-align: left;
+    margin-left: 0 5%;
+    padding-top: 0.25em;
+  }
 }

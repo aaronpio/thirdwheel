@@ -1,9 +1,9 @@
 import React from "react";
-import "./Profile.module.scss";
+import styles from "./Profile.module.scss";
 
 export default function Profile({ user }) {
   return (
-    <article>
+    <article className={styles.profile}>
       <h3>Age</h3>
       <p>{user.age}</p>
 
