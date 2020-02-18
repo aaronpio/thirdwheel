@@ -1,0 +1,6 @@
+#!/bin/sh
+psql -d thirdwheel -f schema/00_schema.sql
+for script in $(ls seeds)
+do
+  psql -d thirdwheel -f seeds/$script
+done
