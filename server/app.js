@@ -12,7 +12,7 @@ const app = express();
 const { Pool } = require("pg");
 const dbParams = {
   port: DB_PORT || 5432,
-  database: DB_NAME || thirdwheel
+  database: DB_NAME || "thirdwheel"
 };
 const db = new Pool(dbParams);
 db.connect();
@@ -28,13 +28,5 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/api/users", usersRouter(db));
-
-// const query = sql => {
-//   console.log(sql);
-//   return db
-//     .query(sql)
-//     .then(res => res.rows)
-//     .catch(err => console.log(err));
-// };
 
 module.exports = app;
