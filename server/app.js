@@ -12,7 +12,6 @@ const app = express();
 const { Pool } = require("pg");
 const dbParams = {
   host: "localhost",
-  user: "aaron",
   port: DB_PORT || 5432,
   database: DB_NAME || "thirdwheel",
   password: DB_PASSWORD
