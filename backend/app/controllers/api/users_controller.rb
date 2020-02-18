@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
   def shuffle
     sleep(0.5)
-    users = User.take(6)
+    users = User.all.sample 6
     render(json: users, include: [:looking_for, :gender])
   end
 
