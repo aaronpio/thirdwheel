@@ -7,37 +7,29 @@
   height: 12em;
   width: 35em;
   background-color: white;
-  border-radius: 6.1em;
-  border-style: solid;
-  border-color: lightgray;
+  border-radius: 0em 5em 5em 0em;
   word-wrap: break-word;
 
-  img {
-    z-index: 0;
-    border-radius: 50% 0px 0px 50%;
-    height: 12em;
-    width: 12em;
-  }
-
   div {
+    box-shadow: inset -8px 8px 0px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     justify-items: flex-start;
     justify-content: flex-start;
-    border-radius: 6em;
+    border-radius: 0em 5em 5em 0em;
     width: 22em;
-    background-color: white;
 
     header {
       display: flex;
+      background-color: rgba(0,0,0,0);
       flex-direction: row;
       justify-items: space-between;
       justify-content: space-between;
-      border-radius: 8em;
+      margin-top: 1em;
       padding-left: 1em;
       padding-bottom: 0.5em;
       width: 17em;
-      height: 3em;
+      height: 1em;
       background-color: white;
 
       h1 {
@@ -45,9 +37,6 @@
         padding-top: 0.4em;
         color: #00536d;
         bottom: 0;
-        border-radius: 8em;
-
-        background-color: white;
       }
 
       h2 {
@@ -57,12 +46,9 @@
 
     p {
       background-color: white;
-      margin: 0;
       padding: 1em;
-      padding-top: 0em;
-      padding-bottom: 0em;
       height: 9em;
-      border-radius: 0em 0em 5em 0em;
+      border-radius: 0em 0em 2em 0em;
       word-break: break-word;
       overflow: hidden;
       text-overflow: ellipsis;

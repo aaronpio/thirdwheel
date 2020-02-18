@@ -24,10 +24,10 @@ export default function InteractiveMatchmakeeCard({ user, select }) {
           <FloatingButton
             check_button
             user={user}
-            message={"O"}
+            message={"✔"}
             onClick={selectAndLoad}
           />
-          <FloatingButton x_button user={user} message={"X"} />
+          <FloatingButton x_button user={user} message={"𝗫"} />
         </>
       )}
     </div>

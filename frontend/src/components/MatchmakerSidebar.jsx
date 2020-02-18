@@ -13,7 +13,7 @@ export default function MatchmakerSidebar({ picks, removeFromSidebar }) {
             {pick && (
               <FloatingButton
                 x_picture_button
-                message={"X"}
+                message={"𝗫"}
                 onClick={() => removeFromSidebar(pick)}
               />
             )}

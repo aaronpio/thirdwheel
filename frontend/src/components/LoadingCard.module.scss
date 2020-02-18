@@ -13,15 +13,12 @@
   margin: 2em;
   height: 12em;
   width: 35em;
-  background-color: white;
+  background-color:  #00536D;
   border-radius: 6.1em;
-  border-style: solid;
-  border-color: lightgray;
 
   .loading {
-    filter: contrast(20%);
     margin: auto;
-    width: 10em;
+    width: 5rem;
     animation: rotate 1s linear infinite;
   }
 }
