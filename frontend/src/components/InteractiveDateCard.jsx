@@ -1,7 +1,7 @@
 import React from "react";
 import MatchmakeeCard from "./MatchmakeeCard";
 import styles from "./InteractiveDateCard.module.scss";
-import FloatingButton from "./buttons/FloatingButton";
+import FloatingButton from "./FloatingButton";
 
 export default function InteractiveDateCard({ user }) {
   return (

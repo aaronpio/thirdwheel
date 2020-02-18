@@ -1,7 +1,7 @@
 import React from "react";
 import "./MatchmakerSidebar.module.scss";
 import Picture from "./Picture";
-import FloatingButton from "./buttons/FloatingButton";
+import FloatingButton from "./FloatingButton";
 
 export default function MatchmakerSidebar({ picks, removeFromSidebar }) {
   return (
