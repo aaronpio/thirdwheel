@@ -5,6 +5,12 @@ class Api::UsersController < ApplicationController
     render(json: users, include: [:looking_for, :gender])
   end
 
+  def random
+    sleep(0.5)
+    users = User.all.sample 1
+    render(json: users, include: [:looking_for, :gender])
+  end
+
   def index
     render json: User.all
   end

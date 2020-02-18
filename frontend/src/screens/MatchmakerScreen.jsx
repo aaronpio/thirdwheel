@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import produce from "immer";
 import MatchmakerGrid from "../components/MatchmakerGrid";
 import MatchmakerSidebar from "../components/MatchmakerSidebar";
-import { getCandidates, getUser } from "../api";
+import { getCandidates, getUser, getRandomUser } from "../api";
 
 export default function MatchmakerScreen({ user }) {
   const [candidates, setCandidates] = useState(new Array(6).fill(null));
@@ -30,7 +30,7 @@ export default function MatchmakerScreen({ user }) {
     });
     setCandidates(newCandidates);
 
-    return getUser(11).then(res => {
+    return getRandomUser().then(res => {
       const newCandidates = produce(candidates, draft => {
         const index = candidates.findIndex(usr => usr === user);
         draft[index] = res.data;
@@ -46,7 +46,7 @@ export default function MatchmakerScreen({ user }) {
     });
     setCandidates(newCandidates);
 
-    return getUser(16).then(res => {
+    return getRandomUser().then(res => {
       const newCandidates = produce(candidates, draft => {
         const index = candidates.findIndex(usr => usr === user);
         draft[index] = res.data;

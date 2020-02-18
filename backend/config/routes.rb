@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     get "users/shuffle", to: 'users#shuffle'
+    get "users/random", to: 'users#random'
     resources :users, :matches
   end
 end
