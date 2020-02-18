@@ -9,22 +9,6 @@ export default function InteractiveMatchmakeeCard({
   select,
   selectRemove
 }) {
-  //const [loading, setLoading] = useState(false);
-
-  // const selectAndLoad = () => {
-  //   setLoading(true);
-  //   select(user).then(() => {
-  //     setLoading(false);
-  //   });
-  // };
-
-  // const selectRemoveAndLoad = () => {
-  //   setLoading(true);
-  //   selectRemove(user).then(() => {
-  //     setLoading(false);
-  //   });
-  // };
-
   return (
     <div className={styles.interactive_card}>
       {!user ? (

@@ -1,16 +1,26 @@
 const express = require("express");
 const router = express.Router();
+const { msleep } = require("sleep");
 
 const userRouter = db => {
-  /* GET users listing. */
-  router.get("/", function(req, res, next) {
-    res.send("respond with a resource");
+  router.get("/shuffle", function(req, res) {
+    msleep(500);
+    db.query("SELECT * FROM users ORDER BY RANDOM() LIMIT 6")
+      .then(_res => res.json(_res.rows))
+      .catch(err => console.log(err));
   });
 
-  router.get("/shuffle", function(req, res) {
-    const users = db
-      .query("SELECT * FROM users LIMIT 6")
-      .then(_res => res.json(_res.rows))
+  router.get("/random", function(req, res) {
+    msleep(500);
+    db.query("SELECT * FROM users ORDER BY RANDOM() LIMIT 1")
+      .then(_res => res.json(_res.rows[0]))
+      .catch(err => console.log(err));
+  });
+
+  router.get("/:id", function(req, res) {
+    msleep(500);
+    db.query(`SELECT * FROM users WHERE id = ${req.params.id}`)
+      .then(_res => res.json(_res.rows[0]))
       .catch(err => console.log(err));
   });
 

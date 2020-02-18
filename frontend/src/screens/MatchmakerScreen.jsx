@@ -35,8 +35,7 @@ export default function MatchmakerScreen({ user }) {
       draft[index] = null;
     });
     setCandidates(newCandidates);
-
-    return getUser(12).then(res => {
+    getRandomUser().then(res => {
       const newCandidates = produce(candidates, draft => {
         const index = candidates.findIndex(usr => usr === user);
         draft[index] = res.data;
