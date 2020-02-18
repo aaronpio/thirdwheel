@@ -4,7 +4,7 @@ import styles from "./LoadingCard.module.scss";
 const LoadingCard = props => {
   return (
     <li className={styles.card}>
-      <img className={styles.loading} src="status.png" />
+      <img className={styles.loading} src="status.png" alt="loadingImg" />
     </li>
   );
 };

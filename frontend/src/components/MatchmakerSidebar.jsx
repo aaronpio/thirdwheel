@@ -6,9 +6,9 @@ import FloatingButton from "./FloatingButton";
 export default function MatchmakerSidebar({ picks, removeFromSidebar }) {
   return (
     <>
-      {picks.map(pick => {
+      {picks.map((pick, index) => {
         return (
-          <div>
+          <div key={index}>
             <Picture user={pick} />
             {pick && (
               <FloatingButton
