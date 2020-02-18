@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
   def shuffle
+    sleep(0.5)
     users = User.take 6
     render(json: users, include: [:looking_for, :gender])
   end
@@ -9,7 +10,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    sleep(1)
+    sleep(0.5)
     render json: User.find(params[:id])
   end
 end

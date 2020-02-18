@@ -9,25 +9,25 @@ export default function InteractiveMatchmakeeCard({
   select,
   selectRemove
 }) {
-  const [loading, setLoading] = useState(false);
+  //const [loading, setLoading] = useState(false);
 
-  const selectAndLoad = () => {
-    setLoading(true);
-    select(user).then(() => {
-      setLoading(false);
-    });
-  };
+  // const selectAndLoad = () => {
+  //   setLoading(true);
+  //   select(user).then(() => {
+  //     setLoading(false);
+  //   });
+  // };
 
-  const selectRemoveAndLoad = () => {
-    setLoading(true);
-    selectRemove(user).then(() => {
-      setLoading(false);
-    });
-  };
+  // const selectRemoveAndLoad = () => {
+  //   setLoading(true);
+  //   selectRemove(user).then(() => {
+  //     setLoading(false);
+  //   });
+  // };
 
   return (
     <div className={styles.interactive_card}>
-      {loading ? (
+      {!user ? (
         <LoadingCard />
       ) : (
         <>
@@ -36,13 +36,13 @@ export default function InteractiveMatchmakeeCard({
             check_button
             user={user}
             message={"✔"}
-            onClick={selectAndLoad}
+            onClick={() => select(user)}
           />
           <FloatingButton
             x_button
             user={user}
             message={"𝗫"}
-            onClick={selectRemoveAndLoad}
+            onClick={() => selectRemove(user)}
           />
         </>
       )}
