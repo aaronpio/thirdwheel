@@ -7,7 +7,8 @@ const FloatingButton = props => {
     [styles.up_button]: props.up_button,
     [styles.down_button]: props.down_button,
     [styles.check_button]: props.check_button,
-    [styles.x_button]: props.x_button
+    [styles.x_button]: props.x_button,
+    [styles.x_picture_button]: props.x_picture_button
   });
 
   return (
