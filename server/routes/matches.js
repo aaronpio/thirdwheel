@@ -18,4 +18,4 @@ const matchesRouter = db => {
   return router;
 };
 
-module.exports = userRouter;
+module.exports = matchesRouter;
