@@ -1,7 +1,6 @@
 import React from "react";
 import InteractiveDateCard from "./InteractiveDateCard";
 import styles from "./MyDates.module.scss";
-import { Link } from "react-router-dom";
 
 const MyDates = () => {
   const users = [

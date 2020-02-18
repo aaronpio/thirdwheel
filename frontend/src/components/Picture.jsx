@@ -14,7 +14,6 @@ export default function Picture({ user }) {
     display: "block",
     textAlign: "center",
     fontFamily: "'Lobster Two', cursive",
-    margin: "auto",
     fontSize: "180px",
     color: "#cffff4"
   };
