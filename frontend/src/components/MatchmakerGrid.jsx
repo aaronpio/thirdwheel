@@ -10,17 +10,18 @@ export default function MatchmakerGrid({
   shuffle
 }) {
   return (
-    <>
-      <div className={styles.grid}>
-        {candidates.map(user => (
+    <div className={styles.cards_button}>
+      <div className={styles.cards}>
+        {candidates.map((user, index) => (
           <InteractiveMatchmakeeCard
+            key={index}
             user={user}
             select={select}
             selectRemove={selectRemove}
           />
         ))}
       </div>
-      <Button onClick={() => shuffle}>Shuffle It!</Button>
-    </>
+      <Button onClick={() => shuffle()}>Shuffle It!</Button>
+    </div>
   );
 }

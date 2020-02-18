@@ -1,4 +1,23 @@
-h3 {
-  color: #ff00b8;
-  text-align: right;
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 1em;
+  padding-top: 3em;
+
+  h3 {
+    font-size: 2em;
+    color: #ff00b8;
+    text-align: right;
+    width: 5em;
+    margin: 1em;
+  }
+  p {
+    font-size: 1.5em;
+    width: 40vw;
+    text-align: left;
+    padding-top: 0.65em;
+    word-wrap: break-word;
+  }
 }

@@ -2,16 +2,23 @@ import React, { useState, useEffect } from "react";
 import produce from "immer";
 import MatchmakerGrid from "../components/MatchmakerGrid";
 import MatchmakerSidebar from "../components/MatchmakerSidebar";
-import { getCandidates, getUser } from "../api";
+import { getCandidates, getUser, getRandomUser } from "../api";
+import styles from "./MatchmakerScreen.module.scss";
 
 export default function MatchmakerScreen({ user }) {
-  const [candidates, setCandidates] = useState([]);
+  const [candidates, setCandidates] = useState(new Array(6).fill(null));
   const [topPick, setTopPick] = useState(null);
   const [bottomPick, setBottomPick] = useState(null);
 
   const select = user => {
     if (topPick === null) setTopPick(user);
     else setBottomPick(user);
+
+    const newCandidates = produce(candidates, draft => {
+      const index = candidates.findIndex(usr => usr === user);
+      draft[index] = null;
+    });
+    setCandidates(newCandidates);
 
     return getUser(11).then(res => {
       const newCandidates = produce(candidates, draft => {
@@ -23,7 +30,13 @@ export default function MatchmakerScreen({ user }) {
   };
 
   const selectRemove = user => {
-    return getUser(16).then(res => {
+    const newCandidates = produce(candidates, draft => {
+      const index = candidates.findIndex(usr => usr === user);
+      draft[index] = null;
+    });
+    setCandidates(newCandidates);
+
+    return getUser(12).then(res => {
       const newCandidates = produce(candidates, draft => {
         const index = candidates.findIndex(usr => usr === user);
         draft[index] = res.data;
@@ -37,9 +50,9 @@ export default function MatchmakerScreen({ user }) {
     if (_user === topPick) setTopPick(null);
   };
 
-  const removeFromGrid = userId => {};
-
   const fetchCandidates = () => {
+    setCandidates(new Array(6).fill(null));
+
     getCandidates().then(res => {
       console.log(res.data);
       setCandidates(res.data);
@@ -52,7 +65,7 @@ export default function MatchmakerScreen({ user }) {
 
   return (
     <>
-      <main>
+      <main className={styles.main}>
         <MatchmakerGrid
           candidates={candidates}
           select={select}
