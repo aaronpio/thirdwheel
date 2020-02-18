@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { PORT, DB_NAME, DB_PORT } = process.env;
+const { PORT, DB_NAME, DB_PORT, DB_PASSWORD } = process.env;
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
@@ -11,8 +11,11 @@ const app = express();
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = {
+  host: "localhost",
+  user: "aaron",
   port: DB_PORT || 5432,
-  database: DB_NAME || "thirdwheel"
+  database: DB_NAME || "thirdwheel",
+  password: DB_PASSWORD
 };
 const db = new Pool(dbParams);
 db.connect();
