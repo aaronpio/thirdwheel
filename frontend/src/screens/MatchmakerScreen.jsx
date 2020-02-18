@@ -3,6 +3,7 @@ import produce from "immer";
 import MatchmakerGrid from "../components/MatchmakerGrid";
 import MatchmakerSidebar from "../components/MatchmakerSidebar";
 import { getCandidates, getUser, getRandomUser } from "../api";
+import styles from "./MatchmakerScreen.module.scss";
 
 export default function MatchmakerScreen({ user }) {
   const [candidates, setCandidates] = useState(new Array(6).fill(null));
@@ -64,7 +65,7 @@ export default function MatchmakerScreen({ user }) {
 
   return (
     <>
-      <main>
+      <main className={styles.main}>
         <MatchmakerGrid
           candidates={candidates}
           select={select}

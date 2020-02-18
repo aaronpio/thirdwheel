@@ -16,7 +16,8 @@ export default function App() {
     gender: "Male",
     looking_for: ["Female"],
     city: "Montreal",
-    bio: "HEY whats up yall?"
+    bio:
+      "HEY whats up yall? ggggggggggggggggggggggggggggggggaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhhhhhhhhhh ggggggggggggggggggggggggggggggggaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhhhhhhhhhh ggggggggggggggggggggggggggggggggaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhhhhhhhhhh ggggggggggggggggggggggggggggggggaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhhhhhhhhhh"
   });
 
   // useEffect(() => {
