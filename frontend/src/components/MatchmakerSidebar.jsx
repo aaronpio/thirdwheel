@@ -1,12 +1,25 @@
 import React from "react";
 import "./MatchmakerSidebar.module.scss";
 import Picture from "./Picture";
+import FloatingButton from "./buttons/FloatingButton";
 
-export default function MatchmakerSidebar({ picks }) {
+export default function MatchmakerSidebar({ picks, removeFromSidebar }) {
   return (
     <>
-      <Picture user={picks[0]} />
-      <Picture user={picks[1]} />
+      {picks.map(pick => {
+        return (
+          <div>
+            <Picture user={pick} />
+            {pick && (
+              <FloatingButton
+                x_picture_button
+                message={"X"}
+                onClick={() => removeFromSidebar(pick)}
+              />
+            )}
+          </div>
+        );
+      })}
     </>
   );
 }

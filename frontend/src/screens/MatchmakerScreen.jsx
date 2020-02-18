@@ -11,11 +11,8 @@ export default function MatchmakerScreen({ user }) {
 
   const select = user => {
     if (topPick === null) setTopPick(user);
-    else if (bottomPick === null) {
-      setBottomPick(user);
-    } else {
-      console.log("to do; swap bottom with selected");
-    }
+    else setBottomPick(user);
+
     return getUser(11).then(res => {
       const newCandidates = produce(candidates, draft => {
         const index = candidates.findIndex(usr => usr === user);
@@ -25,9 +22,9 @@ export default function MatchmakerScreen({ user }) {
     });
   };
 
-  const removeFromSidebar = userId => {
-    if ((userId = bottomPick.id)) setBottomPick(null);
-    if ((userId = topPick.id)) setTopPick(null);
+  const removeFromSidebar = _user => {
+    if (_user === bottomPick) setBottomPick(null);
+    if (_user === topPick) setTopPick(null);
   };
 
   const removeFromGrid = userId => {};
