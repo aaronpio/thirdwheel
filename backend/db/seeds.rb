@@ -76,3 +76,10 @@ pictures = [
     gender: genders.sample
   )
 end
+
+40.times do |i|
+  matchmaker_id = rand(1..40)
+  user1_id = rand(1..40)
+  user2_id = rand(1..40)
+  
+end
