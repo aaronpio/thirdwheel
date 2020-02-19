@@ -1,11 +1,14 @@
 import React from "react";
 import styles from "./LoadingCard.module.scss";
+import LoadingAnimation from "./LoadingAnimation";
 
 const LoadingCard = props => {
   return (
-    <li className={styles.card}>
-      <img className={styles.loading} src="status.png" alt="loadingImg" />
-    </li>
+    <div className={styles.card}>
+      <div className={styles.loading}>
+        <LoadingAnimation />
+      </div>
+    </div>
   );
 };
 
