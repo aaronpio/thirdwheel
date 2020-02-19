@@ -15,6 +15,15 @@ const matchesRouter = db => {
       .catch(err => console.log(err));
   });
 
+  router.get("/:id", function(req, res) {
+    msleep(500);
+    db.query(
+      SQL`SELECT * FROM matches WHERE ${req.params.id} = user1_id OR ${req.params.id} = user2_id}`
+    )
+      .then(_res => res.json(_res.rows[0]))
+      .catch(err => console.log(err));
+  });
+
   return router;
 };
 
