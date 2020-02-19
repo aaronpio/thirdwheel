@@ -1,30 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Chat from "../components/Chat";
+import ChatBar from "../components/ChatBar";
 import ProfileSidebar from "../components/ProfileSidebar";
-import socketIOClient from "socket.io-client";
-import produce from "immer";
 
-export default function ChatScreen({ user }) {
+export default function ChatScreen({ user, socket }) {
   console.log("Creating socket.io client");
-  const socket = socketIOClient("localhost:3002");
   const [messages, setMessages] = useState([]);
 
-  const sendMsg = text => {
-    const msg = { text }
-    socket.emit("msg", msg);
-    const next = produce(messages, draft => draft.push(msg))
-    setMessages(next)
-  };
+  useEffect(() => {
+    socket.on("receive msg", msg => {
+      setMessages(prev => [...prev, msg]);
+    });
+  }, []);
 
-  socket.on("msg", msg => {
-    const next = produce(messages, draft => draft.push(msg))
-    setMessages(next)
-  })
+  const sendMsg = msg => {
+    msg.userId = user.id;
+    socket.emit("send msg", msg);
+    setMessages(prev => [...prev, msg]);
+  };
 
   return (
     <>
       <main>
         <Chat user={user} messages={messages} />
+        <ChatBar sendMsg={sendMsg} />
       </main>
       <aside>
         <ProfileSidebar user={user} />

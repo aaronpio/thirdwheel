@@ -1,3 +1,4 @@
+import socketIOClient from "socket.io-client";
 import React, { useState, useEffect } from "react";
 import Nav from "./components/Nav";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -42,7 +43,7 @@ export default function App() {
           <MatchmakerScreen user={user} />
         </Route>
         <Route path="/chat">
-          <ChatScreen user={user} />
+          <ChatScreen user={user} socket={socketIOClient("localhost:3002")}/>
         </Route>
       </Switch>
     </Router>

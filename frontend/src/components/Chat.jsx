@@ -4,8 +4,8 @@ import styles from "./Chat.module.scss";
 export default function Chat({ user, messages }) {
   return (
     <>
-      {messages.map(msg => (
-        <p>{msg.text}</p>
+      {messages.map((msg, i) => (
+        <p key={i}>{msg.text}</p>
       ))}
     </>
   );

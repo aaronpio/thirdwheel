@@ -15,6 +15,9 @@ io.on('connection', function(socket){
   socket.on('disconnect', function(){
     console.log('user disconnected');
   });
+  socket.on('send msg', msg => {
+    socket.broadcast.emit('receive msg', msg)
+  })
 });
 
 http.listen(3002, function(){
