@@ -9,6 +9,7 @@ export default function MatchmakerScreen({ user }) {
   const [candidates, setCandidates] = useState(new Array(6).fill(null));
   const [topPick, setTopPick] = useState(null);
   const [bottomPick, setBottomPick] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const fetchUser = user => {
     const newCandidates = produce(candidates, draft => {
@@ -58,10 +59,10 @@ export default function MatchmakerScreen({ user }) {
 
   const fetchCandidates = () => {
     setCandidates(new Array(6).fill(null));
-
+    setLoading(true);
     getCandidates().then(res => {
-      console.log(res.data);
       setCandidates(res.data);
+      setLoading(false);
     });
   };
 
@@ -77,6 +78,7 @@ export default function MatchmakerScreen({ user }) {
           select={select}
           selectRemove={selectRemove}
           shuffle={fetchCandidates}
+          loading={loading}
         />
       </main>
       <aside>

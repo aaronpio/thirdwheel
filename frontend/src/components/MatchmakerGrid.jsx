@@ -7,7 +7,8 @@ export default function MatchmakerGrid({
   candidates,
   select,
   selectRemove,
-  shuffle
+  shuffle,
+  loading
 }) {
   return (
     <div className={styles.cards_button}>
@@ -21,7 +22,9 @@ export default function MatchmakerGrid({
           />
         ))}
       </div>
-      <Button onClick={() => shuffle()}>Shuffle It!</Button>
+      <Button disabled={loading} onClick={() => shuffle()}>
+        Shuffle It!
+      </Button>
     </div>
   );
 }
