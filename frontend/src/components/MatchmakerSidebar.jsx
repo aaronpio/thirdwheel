@@ -25,7 +25,9 @@ export default function MatchmakerSidebar({
           </div>
         );
       })}
-      <Button onClick={confirmMatch}>It's a Match</Button>
+      <Button disabled={!(picks[0] && picks[1])} onClick={confirmMatch}>
+        It's a Match
+      </Button>
     </article>
   );
 }
