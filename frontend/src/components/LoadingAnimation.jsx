@@ -2,9 +2,15 @@ import React from "react";
 import styles from "./LoadingAnimation.module.scss";
 
 const LoadingAnimation = props => {
+  let size = "10em";
+
+  if (props.large) {
+    size = "30em";
+  }
+
   return (
     <div className={styles.loading}>
-      <svg width="150" height="150" viewBox="0 0 200 200">
+      <svg width={size} height={size} viewBox="0 0 200 200">
         <g transform="translate(100 100)">
           <path
             transform="translate(-50 -50)"

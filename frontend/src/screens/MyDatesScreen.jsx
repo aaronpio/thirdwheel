@@ -25,9 +25,11 @@ export default function MyDatesScreen({ user }) {
   return (
     <>
       <main className={styles.my_dates_screen}>
-        <h2>My Dates</h2>
+        <h1>My Dates</h1>
         {loading ? (
-          <LoadingAnimation />
+          <div className={styles.loading_animation}>
+            <LoadingAnimation large />
+          </div>
         ) : (
           <MyDates user={user} myDates={dates} />
         )}

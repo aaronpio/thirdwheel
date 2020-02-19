@@ -4,8 +4,14 @@
   justify-items: center;
   align-items: center;
 
-  h2 {
+  .loading_animation {
+    margin-top: 20vh;
+  }
+
+  h1 {
     padding: 0;
+    margin-top: 0.5em;
+    margin-bottom: 0em;
     display: flex;
     justify-content: flex-start;
   }
