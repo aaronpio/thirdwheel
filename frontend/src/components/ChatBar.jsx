@@ -7,6 +7,7 @@ export default function ChatBar({ sendMsg }) {
 
   return (
     <form
+      id="chat"
       className={styles.form}
       onSubmit={e => {
         e.preventDefault();
@@ -22,7 +23,9 @@ export default function ChatBar({ sendMsg }) {
         onClick={e => {
           e.preventDefault();
           sendMsg({ text });
+          document.getElementById("chat").reset();
         }}
+        disabled={text.length === 0}
       >
         Send
       </Button>
