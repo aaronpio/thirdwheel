@@ -16,10 +16,12 @@
   background-color: #00536d;
   opacity: 50%;
   border-radius: 6.1em;
+  box-shadow: inset 8px 8px 0px rgba(0, 0, 0, 0.55);
 
   .loading {
     margin: auto;
     width: 5rem;
+    filter: brightness(200%);
     animation: rotate 1s linear infinite;
   }
 }

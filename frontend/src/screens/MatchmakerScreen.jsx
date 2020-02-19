@@ -10,38 +10,39 @@ export default function MatchmakerScreen({ user }) {
   const [topPick, setTopPick] = useState(null);
   const [bottomPick, setBottomPick] = useState(null);
 
-  const select = user => {
-    if (topPick === null) setTopPick(user);
-    else setBottomPick(user);
-
+  const fetchUser = user => {
     const newCandidates = produce(candidates, draft => {
       const index = candidates.findIndex(usr => usr === user);
       draft[index] = null;
     });
     setCandidates(newCandidates);
 
-    return getRandomUser().then(res => {
+    getRandomUser().then(res => {
       const newCandidates = produce(candidates, draft => {
         const index = candidates.findIndex(usr => usr === user);
+        if (
+          res.data === user ||
+          candidates.includes(user) ||
+          bottomPick === user ||
+          topPick === user
+        ) {
+          // retry
+          console.log("duplicate!!");
+        }
         draft[index] = res.data;
       });
       setCandidates(newCandidates);
     });
   };
 
+  const select = user => {
+    if (topPick === null) setTopPick(user);
+    else setBottomPick(user);
+    fetchUser(user);
+  };
+
   const selectRemove = user => {
-    const newCandidates = produce(candidates, draft => {
-      const index = candidates.findIndex(usr => usr === user);
-      draft[index] = null;
-    });
-    setCandidates(newCandidates);
-    getRandomUser().then(res => {
-      const newCandidates = produce(candidates, draft => {
-        const index = candidates.findIndex(usr => usr === user);
-        draft[index] = res.data;
-      });
-      setCandidates(newCandidates);
-    });
+    fetchUser(user);
   };
 
   const confirmMatch = () => {
