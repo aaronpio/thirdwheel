@@ -26,7 +26,6 @@ export default function MyDatesScreen({ user }) {
     <>
       <main className={styles.my_dates_screen}>
         <h2>My Dates</h2>
-        <LoadingAnimation />
         {loading ? (
           <LoadingAnimation />
         ) : (
