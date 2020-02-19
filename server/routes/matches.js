@@ -15,10 +15,11 @@ const matchesRouter = db => {
       .catch(err => console.log(err));
   });
 
-  router.get("/:id", function(req, res) {
+  router.get("/dates/:id", function(req, res) {
     msleep(500);
     db.query(
-      SQL`SELECT * FROM matches WHERE ${req.params.id} = user1_id OR ${req.params.id} = user2_id`
+      SQL`SELECT * FROM matches JOIN users u1 ON user1_id = u1.id JOIN users u2 ON user2_id = u2.id WHERE ${req.params.id} = user1_id OR ${req.params.id} = user2_id
+      `
     )
       .then(_res => res.json(_res.rows))
       .catch(err => console.log(err));
@@ -28,3 +29,5 @@ const matchesRouter = db => {
 };
 
 module.exports = matchesRouter;
+
+//SELECT * FROM matches JOIN users u1 ON user1_id = u1.id JOIN users u2 ON user2_id = u2.id WHERE ${req.params.id} = user1_id OR ${req.params.id} = user2_id

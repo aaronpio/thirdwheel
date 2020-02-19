@@ -17,3 +17,7 @@ export function getCandidates() {
 export function createMatch() {
   return axios.post("/matches/new");
 }
+
+export function getDates(id) {
+  return axios.get(`/matches/dates/${id}`);
+}
