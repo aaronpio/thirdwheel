@@ -18,9 +18,9 @@ const matchesRouter = db => {
   router.get("/:id", function(req, res) {
     msleep(500);
     db.query(
-      SQL`SELECT * FROM matches WHERE ${req.params.id} = user1_id OR ${req.params.id} = user2_id}`
+      SQL`SELECT * FROM matches WHERE ${req.params.id} = user1_id OR ${req.params.id} = user2_id`
     )
-      .then(_res => res.json(_res.rows[0]))
+      .then(_res => res.json(_res.rows))
       .catch(err => console.log(err));
   });
 
