@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import MyDates from "../components/MyDates";
 import ProfileSidebar from "../components/ProfileSidebar";
 import { getDates, getUser } from "../api";
+import LoadingCard from "../components/LoadingCard";
+import styles from "./MyDatesScreen.module.scss";
 
 export default function MyDatesScreen({ user }) {
   const [dates, setDates] = useState([]);
@@ -22,8 +24,9 @@ export default function MyDatesScreen({ user }) {
 
   return (
     <>
-      <main>
-        <MyDates user={user} myDates={dates} />
+      <main className={styles.my_dates_screen}>
+        <h2>My Dates</h2>
+        {loading ? <LoadingCard /> : <MyDates user={user} myDates={dates} />}
       </main>
       <aside>
         <ProfileSidebar user={user} />
