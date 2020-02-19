@@ -7,12 +7,7 @@ const MyDates = props => {
     <InteractiveDateCard key={user.id} user={user} />
   ));
 
-  return (
-    <div className={styles.my_dates}>
-      <h2>My Dates</h2>
-      <ul>{matchmakeeCardComponents}</ul>
-    </div>
-  );
+  return <ul className={styles.my_dates}>{matchmakeeCardComponents}</ul>;
 };
 
 export default MyDates;
