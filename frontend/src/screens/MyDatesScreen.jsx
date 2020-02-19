@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MyDates from "../components/MyDates";
 import ProfileSidebar from "../components/ProfileSidebar";
 import { getDates, getUser } from "../api";
@@ -16,7 +16,9 @@ export default function MyDatesScreen({ user }) {
     });
   };
 
-  fetchDates(user);
+  useEffect(() => {
+    fetchDates(user);
+  }, []);
 
   return (
     <>
