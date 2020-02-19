@@ -13,6 +13,7 @@
     "morgan": "^1.9.1",
     "pg": "^7.18.1",
     "sleep": "^6.1.0",
+    "socket.io": "^2.3.0",
     "sql-template-strings": "^2.2.2"
   },
   "devDependencies": {

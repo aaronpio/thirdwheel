@@ -7,6 +7,19 @@ const bodyParser = require("body-parser");
 const logger = require("morgan");
 
 const app = express();
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
+
+io.on('connection', function(socket){
+  console.log('a user connected');
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
+});
+
+http.listen(3002, function(){
+  console.log('socket.io listening on *:3002');
+});
 
 // PG database client/connection setup
 const { Pool } = require("pg");
