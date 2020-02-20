@@ -1,55 +1,30 @@
 .card {
   display: flex;
-  flex-direction: row;
-  justify-items: flex-start;
-  justify-content: flex-start;
-  margin: 2em;
+  margin: 2em 4em 2em 0em;
   height: 12em;
-  width: 35em;
   background-color: white;
   border-style: solid;
   border-width: 0.5px;
   border-color: rgba(0, 0, 0, 0.4);
-  border-radius: 2em 4em 2em 4em;
+  border-radius: 0.8rem;
   word-wrap: break-word;
-  box-shadow: inset 6px 6px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 
   div {
     display: flex;
     flex-direction: column;
-    justify-items: flex-start;
-    justify-content: flex-start;
-    width: 22em;
+    width: 20em;
+    padding: 1em;
 
-    header {
-      display: flex;
-      background-color: rgba(0, 0, 0, 0);
-      flex-direction: row;
-      justify-items: space-between;
-      justify-content: space-between;
-      margin-top: 0.75em;
-      padding-left: 1em;
-      padding-bottom: 0.5em;
-      width: 17em;
-      height: 2em;
-      background-color: white;
-
-      h1 {
-        margin: 0;
-        padding-top: 0.4em;
-        color: #00536d;
-        bottom: 0;
-      }
-
-      h2 {
-        //margin-top: 0;
-        color: #00536d;
-      }
+    h2 {
+      font-size: 2rem;
+      margin: 0;
     }
 
     p {
+      margin-right: -50px;
       background-color: white;
-      padding: 1em;
       padding-top: 0em;
       height: 9em;
       word-break: break-word;
