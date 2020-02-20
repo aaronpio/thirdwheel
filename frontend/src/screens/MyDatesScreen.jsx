@@ -10,9 +10,7 @@ export default function MyDatesScreen({ setUser, user }) {
   const [loading, setLoading] = useState(true);
 
   const fetchDates = user => {
-    getDates(2).then(res => {
-      //change from 1 to user.id eventually
-
+    getDates(user.id).then(res => {
       setDates(res.data);
       setLoading(false);
     });
