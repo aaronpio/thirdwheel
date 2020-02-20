@@ -7,8 +7,8 @@ const MatchmakeeCard = ({ user }) => {
     backgroundSize: "contain",
     width: "12rem",
     height: "12rem",
-    borderRadius: "50% 0px 0px 50%",
-    boxShadow: "inset 4px 4px 0px rgba(0, 0, 0, 0.15)"
+    borderRadius: "2em 0px 0px 4em",
+    boxShadow: "inset 6px 6px 0px rgba(0, 0, 0, 0.15)"
   };
 
   return (
