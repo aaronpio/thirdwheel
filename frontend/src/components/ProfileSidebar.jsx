@@ -7,7 +7,6 @@ import Button from "./Button";
 export default function ProfileSidebar({ setUser, user }) {
   const logout = () => {
     localStorage.removeItem("user");
-    document.cookie = "";
     setUser(null);
   };
 
