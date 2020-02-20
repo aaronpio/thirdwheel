@@ -5,10 +5,14 @@
   background-color: white;
   border-radius: 0.8rem;
   word-wrap: break-word;
-  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15), -2px 0px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   position: relative;
+    box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.10), -6px 0px 12px rgba(0, 0, 0, 0.1);
   width: 30em;
+
+  &:hover {
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15), -2px 0px 8px rgba(0, 0, 0, 0.1);
+  }
 
   div {
     display: flex;
