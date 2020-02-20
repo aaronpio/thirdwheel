@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Picture.module.scss";
 
 export default function Picture({ user }) {
-  console.log(user);
   const style = {
     backgroundColor: "#beeee2",
     backgroundImage: `url(${user?.image_url})`,

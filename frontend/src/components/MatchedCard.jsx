@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./MatchedCard.module.scss";
 import Picture from "./Picture";
 
-const MatchedCard = match => {
+const MatchedCard = ({ match }) => {
   const user1 = {
     name: match.matchee1_name,
     image_url: match.matchee1_image_url
