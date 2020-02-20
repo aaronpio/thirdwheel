@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./MatchmakeeCard.module.scss";
 
-const MatchmakeeCard = ({ user }) => {
+const MatchmakeeCard = ({ user, onClick }) => {
   return (
-    <li className={styles.card}>
+    <li className={styles.card} onClick={onClick}>
       <div>
         <h2 className="name">{user.name}, {user.age}</h2>
         <p align="left"> {user.bio}</p>
