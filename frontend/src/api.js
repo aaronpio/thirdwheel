@@ -2,6 +2,10 @@ import axios from "axios";
 
 axios.defaults.baseURL = `/api`;
 
+export function login(email, password) {
+  return axios.post(`/session/login`, { email, password });
+}
+
 export function getUser(id) {
   return axios.get(`/users/${id}`);
 }

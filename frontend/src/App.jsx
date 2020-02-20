@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Nav from "./components/Nav";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
+import LoginScreen from "./screens/LoginScreen";
 import ChatScreen from "./screens/ChatScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import MyDatesScreen from "./screens/MyDatesScreen";
@@ -34,6 +35,9 @@ export default function App() {
     <Router>
       <Nav user={user} />
       <Switch>
+        <Route path="/login">
+          <LoginScreen />
+        </Route>
         <Route path="/profile">
           <ProfileScreen user={user} />
         </Route>
