@@ -5,12 +5,14 @@ const { msleep } = require("sleep");
 const sessionRouter = db => {
   router.post("/login", function(req, res) {
     const { email, password } = req.body;
-    console.log(`SELECT id, email, password FROM users WHERE email = '${email}' AND password = '${password}'`)
+    console.log(
+      `SELECT id, email, password FROM users WHERE email = '${email}' AND password = '${password}'`
+    );
     db.query(
       `SELECT * FROM users WHERE email = '${email}' AND password = '${password}'`
     )
       .then(cursor => {
-        console.log("CURSOR:", cursor)
+        console.log("CURSOR:", cursor);
         const user = cursor.rows[0];
         res.cookie("user-id", user.id).json(user);
       })

@@ -43,6 +43,8 @@ INSERT INTO users (email, name, password, age, points, bio, city, gender_id, ima
 
 INSERT INTO sexual_preferences (user_id, gender_id) VALUES
 (1,	1),
+(1,	2),
+(1,	3),
 (2,	3),
 (3,	2),
 (4,	3),
