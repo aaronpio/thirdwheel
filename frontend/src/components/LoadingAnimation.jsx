@@ -3,9 +3,14 @@ import styles from "./LoadingAnimation.module.scss";
 
 const LoadingAnimation = props => {
   let size = "10em";
+  let duration = "0.5s";
 
   if (props.large) {
     size = "30em";
+  } else if (props.slow) {
+    duration = "1.5s";
+  } else if (props.stationary) {
+    duration = "0s";
   }
 
   return (
@@ -21,7 +26,7 @@ const LoadingAnimation = props => {
             attributeName="transform"
             type="scale"
             values="1; 1.5; 1.25; 1.5; 1.5; 1;"
-            dur="0.5s"
+            dur={duration}
             repeatCount="indefinite"
             additive="sum"
           ></animateTransform>
