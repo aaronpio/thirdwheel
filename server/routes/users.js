@@ -19,14 +19,11 @@ const userRouter = db => {
 
   router.get("/:id", async function(req, res) {
     msleep(500);
-    const prefsCursor = await db.query(
-      `SELECT name FROM sexual_preferences
-      JOIN genders ON genders.id = gender_id WHERE user_id = ${req.params.id}`
-    );
     db.query(`SELECT * FROM users WHERE id = ${req.params.id}`)
       .then(cursor => {
         const user = cursor.rows[0];
         user.sexualPreferences = prefsCursor.rows;
+        console.log(user)
         res.json(user);
       })
       .catch(err => console.log(err));

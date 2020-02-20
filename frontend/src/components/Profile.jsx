@@ -17,7 +17,7 @@ export default function Profile({ user }) {
         <p>{user.age}</p>
         <p>{user.city}</p>
         <p>{genders[user.gender_id]}</p>
-        <p>{user.sexual_preferences.map(gender => gender.name).join(', ')}</p>
+        <p>{user.sexualPreferences.map(gender => gender.name).join(", ")}</p>
         <p>{user.bio}</p>
       </div>
     </article>
