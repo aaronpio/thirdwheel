@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MatchmakeeCard from "./MatchmakeeCard";
 import styles from "./InteractiveMatchmakeeCard.module.scss";
 import FloatingButton from "./FloatingButton";
@@ -9,25 +9,27 @@ export default function InteractiveMatchmakeeCard({
   select,
   selectRemove
 }) {
+  const [hovered, setHovered] = useState(false);
+
   return (
-    <div className={styles.interactive_card}>
+    <div
+      className={styles.interactive_card}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
       {!user ? (
         <LoadingCard />
       ) : (
         <>
-          <MatchmakeeCard user={user} />
-          <FloatingButton
-            check_button
-            user={user}
-            message={"✔"}
-            onClick={() => select(user)}
-          />
-          <FloatingButton
-            x_button
-            user={user}
-            message={"𝗫"}
-            onClick={() => selectRemove(user)}
-          />
+          <MatchmakeeCard user={user} onClick={() => select(user)} />
+          {hovered && (
+            <FloatingButton
+              x_button
+              user={user}
+              message={"𝗫"}
+              onClick={() => selectRemove(user)}
+            />
+          )}
         </>
       )}
     </div>
