@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./Profile.module.scss";
 
+const genders = ["Male", "Female", "Non-binary"];
+
 export default function Profile({ user }) {
   return (
     <article className={styles.profile}>
@@ -13,7 +15,7 @@ export default function Profile({ user }) {
       <div>
         <p>{user.age}</p>
         <p>{user.city}</p>
-        <p>{user.gender}</p>
+        <p>{genders[user.gender_id]}</p>
         <p>{user.bio}</p>
       </div>
     </article>
