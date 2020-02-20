@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./MatchedCard.module.scss";
 import Picture from "./Picture";
+import LoadingAnimation from "./LoadingAnimation";
 
 const MatchedCard = ({ match }) => {
   const user1 = {
@@ -16,6 +17,9 @@ const MatchedCard = ({ match }) => {
   return (
     <li className={styles.card}>
       <Picture user={user1} />
+      <div>
+        <LoadingAnimation slow />
+      </div>
       <Picture user={user2} />
     </li>
   );
