@@ -13,13 +13,15 @@ nav {
 
 aside {
   grid-area: sidebar;
-  background-color: #cffff4;
+  //background-color: #cffff4;
+  background-color: #ffb4b4;
   border-right: 1px solid #dddddd;
 }
 
 main {
   grid-area: main;
-  background-color: #edfffe;
+  //background-color: #edfffe;
+  background-color: #faeee7;
 }
 
 * {
