@@ -1,20 +1,18 @@
 .card {
   display: flex;
-  margin: 2em 4em 2em 0em;
+  margin: 2em;
   height: 12em;
   background-color: white;
-  border-style: solid;
-  border-width: 0.5px;
-  border-color: rgba(0, 0, 0, 0.4);
   border-radius: 0.8rem;
   word-wrap: break-word;
-  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15),-2px 0px 8px rgba(0, 0, 0, 0.10);
   cursor: pointer;
+  position: relative;
+  width: 30em;
 
   div {
     display: flex;
     flex-direction: column;
-    width: 20em;
     padding: 1em;
 
     h2 {
@@ -23,6 +21,7 @@
     }
 
     p {
+      padding-right: 8em;
       margin-right: -50px;
       background-color: white;
       padding-top: 0em;
@@ -32,4 +31,14 @@
       text-overflow: ellipsis;
     }
   }
+}
+
+img {
+  width: 14rem;
+  height: 14rem;
+  border-radius: 200px;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15), -2px -2px 12px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  right: -30%;
+  top: -12px;
 }
