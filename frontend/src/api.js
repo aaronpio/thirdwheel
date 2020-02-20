@@ -18,8 +18,8 @@ export function getCandidates() {
   return axios.get("/users/shuffle");
 }
 
-export function createMatch() {
-  return axios.post("/matches/new");
+export function createMatch(matchmakerId, user1Id, user2Id) {
+  return axios.post("/matches/new", { matchmakerId, user1Id, user2Id });
 }
 
 export function getDates(id) {

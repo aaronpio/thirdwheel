@@ -47,7 +47,9 @@ export default function MatchmakerScreen({ user }) {
   };
 
   const confirmMatch = () => {
-    createMatch(topPick, bottomPick).then(res => console.log(res));
+    createMatch(user.id, topPick.id, bottomPick.id).then(res =>
+      console.log(res)
+    );
     setTopPick(null);
     setBottomPick(null);
   };
