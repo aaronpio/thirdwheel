@@ -12,31 +12,14 @@ import MatchmakerScreen from "./screens/MatchmakerScreen";
 import { getUser } from "./api";
 
 export default function App() {
-  const [user, setUser] = useState({
-    name: "Aaron",
-    age: 28,
-    points: 75,
-    image_url: "https://avatars0.githubusercontent.com/u/24718190?s=460&v=4",
-    gender: "Male",
-    looking_for: ["Female"],
-    city: "Montreal",
-    bio:
-      "HEY whats up yall? ggggggggggggggggggggggggggggggggaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhhhhhhhhhh ggggggggggggggggggggggggggggggggaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhhhhhhhhhh ggggggggggggggggggggggggggggggggaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhhhhhhhhhh ggggggggggggggggggggggggggggggggaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhhhhhhhhhh"
-  });
-
-  // useEffect(() => {
-  //   getUser(2).then(res => {
-  //     console.log(res.data)
-  //     setUser(res.data);
-  //   });
-  // }, []);
+  const [user, setUser] = useState(null);
 
   return (
     <Router>
       <Nav user={user} />
       <Switch>
         <Route path="/login">
-          <LoginScreen />
+          <LoginScreen setUser={setUser}/>
         </Route>
         <Route path="/profile">
           <ProfileScreen user={user} />

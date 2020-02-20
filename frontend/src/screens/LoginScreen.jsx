@@ -3,7 +3,7 @@ import Button from "../components/Button";
 import styles from "./LoginScreen.module.scss";
 import { login } from "../api";
 
-export default function LoginScreen() {
+export default function LoginScreen({ setUser }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
@@ -24,7 +24,7 @@ export default function LoginScreen() {
         <Button
           onClick={e => {
             e.preventDefault();
-            login(email, password);
+            login(email, password).then(res => res.data && setUser(res.data));
           }}
         >
           Log In

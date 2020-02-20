@@ -7,12 +7,12 @@ const sessionRouter = db => {
     const { email, password } = req.body;
     console.log(`SELECT id, email, password FROM users WHERE email = '${email}' AND password = '${password}'`)
     db.query(
-      `SELECT id, email, password FROM users WHERE email = '${email}' AND password = '${password}'`
+      `SELECT * FROM users WHERE email = '${email}' AND password = '${password}'`
     )
       .then(cursor => {
         console.log("CURSOR:", cursor)
-        const { id } = cursor.rows[0];
-        res.cookie("user-id", id).sendStatus(200);
+        const user = cursor.rows[0];
+        res.cookie("user-id", user.id).json(user);
       })
       .catch(err => console.log(err));
   });
