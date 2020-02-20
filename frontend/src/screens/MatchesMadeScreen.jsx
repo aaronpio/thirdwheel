@@ -1,37 +1,35 @@
 import React, { useState, useEffect } from "react";
-import MyDates from "../components/MyDates";
+import MatchesMade from "../components/MatchesMade";
 import ProfileSidebar from "../components/ProfileSidebar";
-import { getDates } from "../api";
+import { getMatches } from "../api";
 import LoadingAnimation from "../components/LoadingAnimation";
-import styles from "./MyDatesScreen.module.scss";
+import styles from "./MatchesMadeScreen.module.scss";
 
-export default function MyDatesScreen({ user }) {
-  const [dates, setDates] = useState([]);
+export default function MatchesMadeScreen({ user }) {
+  const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchDates = user => {
-    getDates(2).then(res => {
-      //change from 1 to user.id eventually
-
-      setDates(res.data);
+  const fetchMatches = user => {
+    getMatches(1).then(res => {
+      setMatches(res.data);
       setLoading(false);
     });
   };
 
   useEffect(() => {
-    fetchDates(user);
+    fetchMatches(user);
   }, []);
 
   return (
     <>
-      <main className={styles.my_dates_screen}>
-        <h1>My Dates</h1>
+      <main className={styles.my_matches_screen}>
+        <h1>Matches Made</h1>
         {loading ? (
           <div className={styles.loading_animation}>
             <LoadingAnimation large />
           </div>
         ) : (
-          <MyDates user={user} myDates={dates} />
+          <MatchesMade user={user} matchesMade={matches} />
         )}
       </main>
       <aside>

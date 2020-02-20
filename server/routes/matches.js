@@ -25,6 +25,15 @@ const matchesRouter = db => {
       .catch(err => console.log(err));
   });
 
+  router.get("/:id", function(req, res) {
+    msleep(500);
+    db.query(
+      SQL`SELECT matches.id as match_id, u1.name as matchee1_name, u1.image_url matchee1_image_url, u2.name as matchee2_name, u2.image_url as matchee2_image_url FROM matches JOIN users u1 ON user1_id = u1.id JOIN users u2 ON user2_id = u2.id WHERE matchmaker_id = ${req.params.id}`
+    )
+      .then(_res => res.json(_res.rows))
+      .catch(err => console.log(err));
+  });
+
   return router;
 };
 

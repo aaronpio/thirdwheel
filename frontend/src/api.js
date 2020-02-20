@@ -21,3 +21,7 @@ export function createMatch() {
 export function getDates(id) {
   return axios.get(`/matches/dates/${id}`);
 }
+
+export function getMatches(id) {
+  return axios.get(`/matches/${id}`);
+}

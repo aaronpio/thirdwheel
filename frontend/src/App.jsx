@@ -6,6 +6,7 @@ import "./App.scss";
 import ChatScreen from "./screens/ChatScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import MyDatesScreen from "./screens/MyDatesScreen";
+import MyMatchesScreen from "./screens/MatchesMadeScreen";
 import MatchmakerScreen from "./screens/MatchmakerScreen";
 import { getUser } from "./api";
 
@@ -39,11 +40,14 @@ export default function App() {
         <Route path="/dates">
           <MyDatesScreen user={user} />
         </Route>
+        <Route path="/matches">
+          <MyMatchesScreen user={user} />
+        </Route>
         <Route path="/matchmaker">
           <MatchmakerScreen user={user} />
         </Route>
         <Route path="/chat">
-          <ChatScreen user={user} socket={socketIOClient("localhost:3002")}/>
+          <ChatScreen user={user} socket={socketIOClient("localhost:3002")} />
         </Route>
       </Switch>
     </Router>
