@@ -10,7 +10,7 @@ export default function MatchesMadeScreen({ setUser, user }) {
   const [loading, setLoading] = useState(true);
 
   const fetchMatches = user => {
-    getMatches(1).then(res => {
+    getMatches(user.id).then(res => {
       setMatches(res.data);
       setLoading(false);
     });
