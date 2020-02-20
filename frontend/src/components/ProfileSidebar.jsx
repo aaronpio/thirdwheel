@@ -2,8 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./ProfileSidebar.module.scss";
 import Picture from "./Picture";
+import Button from "./Button";
 
-export default function ProfileSidebar({ user }) {
+export default function ProfileSidebar({ setUser, user }) {
+  const logout = () => {
+    localStorage.removeItem("user");
+    document.cookie = "";
+    setUser(null);
+  };
+
   return (
     <>
       <Picture user={user} />
@@ -17,9 +24,7 @@ export default function ProfileSidebar({ user }) {
         <Link to="/matches">
           <p>Matches Made</p>
         </Link>
-        <Link to="/logout">
-          <p>Log Out</p>
-        </Link>
+        <Button onClick={logout}>Log Out</Button>
       </div>
     </>
   );

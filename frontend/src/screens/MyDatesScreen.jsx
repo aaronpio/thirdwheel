@@ -5,7 +5,7 @@ import { getDates } from "../api";
 import LoadingAnimation from "../components/LoadingAnimation";
 import styles from "./MyDatesScreen.module.scss";
 
-export default function MyDatesScreen({ user }) {
+export default function MyDatesScreen({ setUser, user }) {
   const [dates, setDates] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -35,7 +35,7 @@ export default function MyDatesScreen({ user }) {
         )}
       </main>
       <aside>
-        <ProfileSidebar user={user} />
+        <ProfileSidebar user={user} setUser={setUser} />
       </aside>
     </>
   );

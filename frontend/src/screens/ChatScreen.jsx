@@ -3,7 +3,7 @@ import Chat from "../components/Chat";
 import ChatBar from "../components/ChatBar";
 import ProfileSidebar from "../components/ProfileSidebar";
 
-export default function ChatScreen({ user, socket }) {
+export default function ChatScreen({ setUser, user, socket }) {
   console.log("Creating socket.io client");
   const [messages, setMessages] = useState([]);
 
@@ -26,7 +26,7 @@ export default function ChatScreen({ user, socket }) {
         <ChatBar sendMsg={sendMsg} />
       </main>
       <aside>
-        <ProfileSidebar user={user} />
+        <ProfileSidebar user={user} setUser={setUser} />
       </aside>
     </>
   );

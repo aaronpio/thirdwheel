@@ -5,7 +5,7 @@ import { getMatches } from "../api";
 import LoadingAnimation from "../components/LoadingAnimation";
 import styles from "./MatchesMadeScreen.module.scss";
 
-export default function MatchesMadeScreen({ user }) {
+export default function MatchesMadeScreen({ setUser, user }) {
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -33,7 +33,7 @@ export default function MatchesMadeScreen({ user }) {
         )}
       </main>
       <aside>
-        <ProfileSidebar user={user} />
+        <ProfileSidebar user={user} setUser={setUser} />
       </aside>
     </>
   );
