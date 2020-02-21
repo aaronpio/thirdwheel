@@ -5,7 +5,7 @@ import ProfileSidebar from "../components/ProfileSidebar";
 import styles from "./ChatScreen.scss";
 
 const date = { id: 100 };
-export default function ChatScreen({ user, socket }) {
+export default function ChatScreen({ user, socket, setUser }) {
   const [messages, setMessages] = useState([
     { text: "Hi", user },
     { text: "Hey wuza", user: date }
