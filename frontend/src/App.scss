@@ -17,11 +17,13 @@ aside {
   grid-area: sidebar;
   background-color: $sidebar-color;
   border-right: 1px solid #dddddd;
+  background-image: $svg-pattern;
 }
 
 main {
   grid-area: main;
   background-color: $screen-color;
+  box-shadow: inset 0px 4px 56px rgba(0, 0, 0, 0.15);
 }
 
 * {
