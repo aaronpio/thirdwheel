@@ -5,11 +5,13 @@ import styles from "./Nav.module.scss";
 export default function Nav({ user }) {
   return (
     <nav>
-      <Link to="/">
+      <Link to="/profile">
         <h1 className={styles.logo}>ThirdWheel</h1>
       </Link>
-      {user && <Link to="/matchmaker">Matchmaker</Link>}
-      {user && <Link to="/profile">My Profile</Link>}
+      <div>
+        {user && <Link to="/matchmaker">Matchmaker</Link>}
+        {user && <Link to="/profile">My Profile</Link>}
+      </div>
     </nav>
   );
 }
