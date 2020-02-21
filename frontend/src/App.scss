@@ -3,7 +3,7 @@
 #root {
   display: grid;
   grid-template-columns: 300px 4fr;
-  grid-template-rows: 96px 9fr;
+  grid-template-rows: 96px auto;
   grid-template-areas:
     "sidebar nav"
     "sidebar main";
@@ -18,9 +18,12 @@ aside {
   background-color: $sidebar-color;
   border-right: 1px solid #dddddd;
   background-image: $svg-pattern;
+  position: fixed;
+  width: 300px;
 }
 
 main {
+  min-height: calc(100vh - 96px);
   grid-area: main;
   background-color: $screen-color;
   box-shadow: inset 0px 4px 56px rgba(0, 0, 0, 0.15);
