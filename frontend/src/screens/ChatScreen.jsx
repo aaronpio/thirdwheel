@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Chat from "../components/Chat";
 import ChatBar from "../components/ChatBar";
 import ProfileSidebar from "../components/ProfileSidebar";
+import styles from "./ChatScreen.scss";
 
 export default function ChatScreen({ setUser, user, socket }) {
   console.log("Creating socket.io client");
@@ -21,7 +22,7 @@ export default function ChatScreen({ setUser, user, socket }) {
 
   return (
     <>
-      <main>
+      <main className={styles.grid}>
         <Chat user={user} messages={messages} />
         <ChatBar sendMsg={sendMsg} />
       </main>
