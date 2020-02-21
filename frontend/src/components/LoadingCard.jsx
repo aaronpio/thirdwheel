@@ -4,12 +4,21 @@ import LoadingAnimation from "./LoadingAnimation";
 
 const LoadingCard = props => {
   return (
-    <div className={styles.card}>
-      <div className={styles.loading}>
-        <LoadingAnimation />
+    <li className={styles.card}>
+      <div>
+        <h2 className="name"></h2>
+        <p align="left"> </p>
       </div>
-    </div>
+      <section>{<LoadingAnimation />}</section>
+    </li>
   );
+  // return (
+  //   <div className={styles.card}>
+  //     <div className={styles.loading}>
+  //       <LoadingAnimation />
+  //     </div>
+  //   </div>
+  // );
 };
 
 export default LoadingCard;

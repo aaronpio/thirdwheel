@@ -1,17 +1,51 @@
+// .card {
+//   display: flex;
+//   flex-direction: row;
+//   justify-items: flex-start;
+//   justify-content: flex-start;
+//   margin: 2em;
+//   height: 12em;
+//   width: 35em;
+//   background-color: #00536d;
+//   border-radius: 2em 4em 2em 4em;
+//   box-shadow: inset 6px 6px 0px rgba(0, 0, 0, 0.55);
+
+//   .loading {
+//     margin: 0 auto;
+//     padding-top: 1.7em;
+//   }
+// }
+
+@import "../library";
+
 .card {
   display: flex;
-  flex-direction: row;
-  justify-items: flex-start;
-  justify-content: flex-start;
   margin: 2em;
   height: 12em;
-  width: 35em;
-  background-color: #00536d;
-  border-radius: 2em 4em 2em 4em;
-  box-shadow: inset 6px 6px 0px rgba(0, 0, 0, 0.55);
+  background-color: $card-background-color;
+  border-radius: 0.8rem;
+  word-wrap: break-word;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.1), -6px 0px 12px rgba(0, 0, 0, 0.1);
+  width: 30em;
 
-  .loading {
-    margin: 0 auto;
-    padding-top: 1.7em;
+  &:hover {
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15), -2px 0px 8px rgba(0, 0, 0, 0.1);
   }
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14rem;
+  height: 14rem;
+  border-radius: 200px;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15),
+    -2px -2px 12px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  right: -30%;
+  top: -12px;
+  background-color: $card-loading-background;
 }

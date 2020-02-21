@@ -3,7 +3,7 @@ import styles from "./Picture.module.scss";
 
 export default function Picture({ user }) {
   const style = {
-    backgroundColor: "#faeee7",
+    backgroundColor: "#ffc6c7", //<= background color
     backgroundImage: `url(${user?.image_url})`,
     backgroundSize: "contain",
     borderRadius: "228px",
@@ -15,7 +15,7 @@ export default function Picture({ user }) {
     textAlign: "center",
     fontFamily: "'Lobster Two', cursive",
     fontSize: "180px",
-    color: "#00536d"
+    color: "#558695" //<= question mark color
   };
 
   return (
