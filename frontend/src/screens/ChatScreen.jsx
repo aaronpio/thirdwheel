@@ -12,7 +12,7 @@ export default function ChatScreen({ setUser, user, socket }) {
     socket.on("receive msg", msg => {
       setMessages(prev => [...prev, msg]);
     });
-  }, []);
+  }, [socket]);
 
   const sendMsg = msg => {
     msg.userId = user.id;
@@ -23,8 +23,8 @@ export default function ChatScreen({ setUser, user, socket }) {
   return (
     <>
       <main className={styles.grid}>
-        <Chat user={user} messages={messages} />
-        <ChatBar sendMsg={sendMsg} />
+        <Chat user={user} messages={messages} className={styles.messages} />
+        <ChatBar sendMsg={sendMsg}/>
       </main>
       <aside>
         <ProfileSidebar user={user} setUser={setUser} />

@@ -1,0 +1,13 @@
+.grid {
+  display: grid;
+  grid-template-rows: 90vh 5em;
+}
+
+.messages {
+  grid-row: 1 / 2
+}
+
+.chatbar {
+  position: fixed;
+  bottom: 0;
+}
