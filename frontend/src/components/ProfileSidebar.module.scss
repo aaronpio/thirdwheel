@@ -1,11 +1,38 @@
-aside {
+@import "../library";
+
+.profile_sidebar {
   display: flex;
   height: 100vh;
-  padding: 10%;
   flex-direction: column;
-  padding-top: 8em;
-}
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
 
-aside * {
-  color: #00536d;
+  .profile_links {
+    * {
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      color: $profile-sidebar-text;
+      font-size: 1.5em;
+      margin: 0.5em;
+    }
+
+    button {
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0.5em;
+      color: $profile-sidebar-text;
+      text-decoration: underline none;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+  }
 }
