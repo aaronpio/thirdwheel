@@ -4,12 +4,7 @@ import "./ProfileSidebar.module.scss";
 import Picture from "./Picture";
 import Button from "./Button";
 
-export default function ProfileSidebar({ setUser, user }) {
-  const logout = () => {
-    localStorage.removeItem("user");
-    setUser(null);
-  };
-
+export default function ProfileSidebar({ logout, user }) {
   return (
     <>
       <Picture user={user} />

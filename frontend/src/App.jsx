@@ -7,7 +7,7 @@ import LoginScreen from "./screens/LoginScreen";
 import ChatScreen from "./screens/ChatScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import MyDatesScreen from "./screens/MyDatesScreen";
-import MyMatchesScreen from "./screens/MatchesMadeScreen";
+import MatchesMadeScreen from "./screens/MatchesMadeScreen";
 import MatchmakerScreen from "./screens/MatchmakerScreen";
 import { getUser } from "./api";
 
@@ -17,6 +17,11 @@ export default function App() {
   const setUserAndLocalStorage = user => {
     localStorage.setItem("user", JSON.stringify(user));
     setUser(user);
+  };
+
+  const logoutAndDeleteLocalStorage = () => {
+    localStorage.removeItem("user");
+    setUser(null);
   };
 
   useEffect(() => {
@@ -33,13 +38,16 @@ export default function App() {
       ) : (
         <Switch>
           <Route path="/profile">
-            <ProfileScreen user={user} setUser={setUser} />
+            <ProfileScreen user={user} logout={logoutAndDeleteLocalStorage} />
           </Route>
           <Route path="/dates">
-            <MyDatesScreen user={user} setUser={setUser} />
+            <MyDatesScreen user={user} logout={logoutAndDeleteLocalStorage} />
           </Route>
           <Route path="/matches">
-            <MyMatchesScreen user={user} setUser={setUser} />
+            <MatchesMadeScreen
+              user={user}
+              logout={logoutAndDeleteLocalStorage}
+            />
           </Route>
           <Route path="/matchmaker">
             <MatchmakerScreen user={user} />
