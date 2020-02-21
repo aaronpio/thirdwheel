@@ -10,13 +10,13 @@ export default function LoginScreen({ setUserAndLocalStorage }) {
     <main>
       <form className={styles.form} action="/api/session/login" method="POST">
         <input
-          onChange={e => setEmail(e.target.value)}
+          onChange={e => setEmail(e.target.value.trim())}
           className={styles.input}
           type="text"
           placeholder="Email"
         />
         <input
-          onChange={e => setPassword(e.target.value)}
+          onChange={e => setPassword(e.target.value.trim())}
           className={styles.input}
           type="text"
           placeholder="Password"
