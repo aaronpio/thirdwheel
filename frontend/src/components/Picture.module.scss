@@ -3,11 +3,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @import "../library";
 
   .picname {
     position: relative;
     text-align: center;
     font-size: 2em;
-    color: #00536d;
+    color: $profile-picture-name-text;
   }
 }

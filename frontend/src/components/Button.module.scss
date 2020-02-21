@@ -1,9 +1,11 @@
+@import "../library";
+
 .button {
   border-radius: 50px;
   height: 2em;
   width: 8em;
-  background-color: #ff00b8;
-  color: white;
+  background-color: $button-color;
+  color: $button-text-color;
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0 0.5rem;

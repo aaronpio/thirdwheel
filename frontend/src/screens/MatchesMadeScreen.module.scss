@@ -1,3 +1,5 @@
+@import "../library";
+
 .my_matches_screen {
   display: flex;
   flex-direction: column;
@@ -14,6 +16,6 @@
     margin-bottom: 0em;
     display: flex;
     justify-content: flex-start;
-    color: #00536d;
+    color: $screen-header-text;
   }
 }
