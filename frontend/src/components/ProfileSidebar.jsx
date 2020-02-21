@@ -1,25 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./ProfileSidebar.module.scss";
+import styles from "./ProfileSidebar.module.scss";
 import Picture from "./Picture";
-import Button from "./Button";
 
 export default function ProfileSidebar({ logout, user }) {
   return (
-    <>
+    <div className={styles.profile_sidebar}>
       <Picture user={user} />
-      <div>
-        <p>
-          Points: <b>{user.points}</b>
-        </p>
+      <div className={styles.profile_links}>
         <Link to="/dates">
           <p>My Dates</p>
         </Link>
         <Link to="/matches">
           <p>Matches Made</p>
         </Link>
-        <Button onClick={logout}>Log Out</Button>
+        <button onClick={logout}>Log Out</button>
       </div>
-    </>
+    </div>
   );
 }

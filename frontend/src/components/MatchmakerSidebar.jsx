@@ -1,5 +1,5 @@
 import React from "react";
-import "./MatchmakerSidebar.module.scss";
+import styles from "./MatchmakerSidebar.module.scss";
 import Picture from "./Picture";
 import FloatingButton from "./FloatingButton";
 import Button from "./Button";
@@ -10,7 +10,7 @@ export default function MatchmakerSidebar({
   confirmMatch
 }) {
   return (
-    <article>
+    <article className={styles.aside}>
       {picks.map((pick, index) => {
         return (
           <div key={index}>
