@@ -18,7 +18,7 @@ const matchesRouter = db => {
   router.get("/dates/:id", function(req, res) {
     msleep(500);
     db.query(
-      SQL`SELECT * FROM matches JOIN users u1 ON user1_id = u1.id JOIN users u2 ON user2_id = u2.id WHERE ${req.params.id} = user1_id OR ${req.params.id} = user2_id
+      SQL`SELECT * FROM matches JOIN users u1 ON user1_id = u1.id JOIN users u2 ON user2_id = u2.id WHERE ${req.params.id} = user1_id OR ${req.params.id} = user2_id ORDER BY matches DESC
       `
     )
       .then(_res => res.json(_res.rows))
@@ -28,7 +28,7 @@ const matchesRouter = db => {
   router.get("/:id", function(req, res) {
     msleep(500);
     db.query(
-      SQL`SELECT matches.id as match_id, u1.name as matchee1_name, u1.image_url matchee1_image_url, u2.name as matchee2_name, u2.image_url as matchee2_image_url FROM matches JOIN users u1 ON user1_id = u1.id JOIN users u2 ON user2_id = u2.id WHERE matchmaker_id = ${req.params.id}`
+      SQL`SELECT matches.id as match_id, u1.name as matchee1_name, u1.image_url matchee1_image_url, u2.name as matchee2_name, u2.image_url as matchee2_image_url FROM matches JOIN users u1 ON user1_id = u1.id JOIN users u2 ON user2_id = u2.id WHERE matchmaker_id = ${req.params.id} ORDER BY matches DESC`
     )
       .then(_res => res.json(_res.rows))
       .catch(err => console.log(err));
