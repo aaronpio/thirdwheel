@@ -25,6 +25,7 @@ export default function LoginScreen({ setUserAndLocalStorage }) {
             type="password"
             placeholder="Password"
           />
+
           <Button
             onClick={e => {
               e.preventDefault();

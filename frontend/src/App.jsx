@@ -59,6 +59,9 @@ export default function App() {
               setUser={setUser}
             />
           </Route>
+          <Route path="/">
+            <ProfileScreen user={user} logout={logoutAndDeleteLocalStorage} />
+          </Route>
         </Switch>
       )}
     </Router>
