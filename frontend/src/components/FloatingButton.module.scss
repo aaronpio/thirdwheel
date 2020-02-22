@@ -1,5 +1,7 @@
+@import "../library";
+
 .button {
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35);
   height: 2.25em;
   width: 2.25em;
   border-radius: 50%;
@@ -15,12 +17,12 @@
   font-weight: bold;
 
   &:hover {
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25),
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35),
       inset 2px 2px 2px rgba(0, 0, 0, 0.25);
   }
 
   &:active {
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25),
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35),
       inset 4px 4px 2px rgba(0, 0, 0, 0.25);
   }
 
@@ -48,5 +50,25 @@
     left: -0.3em;
     top: -14.5em;
     background: #ff5858;
+  }
+
+  &.dismiss_button {
+    top: -1.2rem;
+    left: 2.8rem;
+    height: 2.5rem;
+    width: 7rem;
+    background: #ff5858;
+    border-radius: 0.8rem;
+    border: 0;
+  }
+
+  &.chat_button {
+    top: -1.2rem;
+    left: 2.05rem;
+    height: 2.5rem;
+    width: 15rem;
+    background: #47b0da;
+    border-radius: 0.8rem;
+    border: 0;
   }
 }

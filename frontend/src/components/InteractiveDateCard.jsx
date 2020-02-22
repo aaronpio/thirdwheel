@@ -7,8 +7,8 @@ export default function InteractiveDateCard({ user }) {
   return (
     <div className={styles.interactive_card}>
       <MatchmakeeCard user={user} />
-      <FloatingButton up_button user={user} message={"👍"} />
-      <FloatingButton down_button user={user} message={"👎"} />
+      <FloatingButton chat_button user={user} message={"Send A Message"} />
+      <FloatingButton dismiss_button user={user} message={"Dismiss"} />
     </div>
   );
 }
