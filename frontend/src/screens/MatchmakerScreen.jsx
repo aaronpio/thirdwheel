@@ -7,6 +7,7 @@ import {
   getCandidatesFiltered,
   getUser,
   getRandomUser,
+  getRandomUserFiltered,
   createMatch
 } from "../api";
 import styles from "./MatchmakerScreen.module.scss";
@@ -24,22 +25,41 @@ export default function MatchmakerScreen({ user }) {
     });
     setCandidates(newCandidates);
 
-    getRandomUser().then(res => {
-      const newCandidates = produce(candidates, draft => {
-        const index = candidates.findIndex(usr => usr === user);
-        if (
-          res.data === user ||
-          candidates.includes(user) ||
-          bottomPick === user ||
-          topPick === user
-        ) {
-          // retry
-          console.log("duplicate!!");
-        }
-        draft[index] = res.data;
+    if (topPick) {
+      getRandomUserFiltered(topPick).then(res => {
+        const newCandidates = produce(candidates, draft => {
+          const index = candidates.findIndex(usr => usr === user);
+          if (
+            res.data === user ||
+            candidates.includes(user) ||
+            bottomPick === user ||
+            topPick === user
+          ) {
+            // retry
+            console.log("duplicate!!");
+          }
+          draft[index] = res.data;
+        });
+        setCandidates(newCandidates);
       });
-      setCandidates(newCandidates);
-    });
+    } else {
+      getRandomUser().then(res => {
+        const newCandidates = produce(candidates, draft => {
+          const index = candidates.findIndex(usr => usr === user);
+          if (
+            res.data === user ||
+            candidates.includes(user) ||
+            bottomPick === user ||
+            topPick === user
+          ) {
+            // retry
+            console.log("duplicate!!");
+          }
+          draft[index] = res.data;
+        });
+        setCandidates(newCandidates);
+      });
+    }
   };
 
   const fetchCandidates = user => {
@@ -61,26 +81,22 @@ export default function MatchmakerScreen({ user }) {
 
   useEffect(() => {
     shuffle();
-  }, [topPick]);
+  }, []);
 
-  const userToFilterFor = () => {
-    let userToFilterFor = null;
-    if (topPick && !bottomPick) {
-      userToFilterFor = topPick;
-    } else if (topPick && bottomPick) {
-      userToFilterFor = topPick;
+  const shuffle = user => {
+    if (!user) {
+      fetchCandidates(topPick);
+    } else {
+      fetchCandidates(user);
     }
-    return userToFilterFor;
-  };
-
-  const shuffle = () => {
-    const user = userToFilterFor();
-    fetchCandidates(user);
   };
 
   const select = user => {
-    if (topPick === null) setTopPick(user);
-    else setBottomPick(user);
+    if (topPick === null) {
+      setTopPick(user);
+      shuffle(user);
+      return;
+    } else setBottomPick(user);
     fetchUser(user);
   };
 

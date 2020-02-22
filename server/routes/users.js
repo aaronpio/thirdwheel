@@ -19,11 +19,18 @@ const userRouter = db => {
       .catch(err => console.log(err));
   });
 
-  router.get("/random", function(req, res) {
+  router.get("/random/:id", function(req, res) {
     msleep(500);
     db.query(
-      "SELECT u2.* FROM sexual_preferences sp LEFT JOIN users u1 ON u1.id = sp.user_id RIGHT JOIN users u2 ON u2.gender_id = sp.gender_id WHERE u1.gender_id IN (SELECT sexual_preferences.gender_id FROM sexual_preferences JOIN users on u2.id = user_id) AND u1 != u2 AND u1.id = 1 ORDER BY RANDOM() LIMIT 1"
+      `SELECT u2.* FROM sexual_preferences sp LEFT JOIN users u1 ON u1.id = sp.user_id RIGHT JOIN users u2 ON u2.gender_id = sp.gender_id WHERE u1.gender_id IN (SELECT sexual_preferences.gender_id FROM sexual_preferences JOIN users on u2.id = user_id) AND u1 != u2 AND u1.id = ${req.params.id} ORDER BY RANDOM() LIMIT 1`
     )
+      .then(cursor => res.json(cursor.rows[0]))
+      .catch(err => console.log(err));
+  });
+
+  router.get("/random", function(req, res) {
+    msleep(500);
+    db.query("SELECT * FROM users ORDER BY RANDOM() LIMIT 1")
       .then(cursor => res.json(cursor.rows[0]))
       .catch(err => console.log(err));
   });

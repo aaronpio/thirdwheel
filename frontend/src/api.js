@@ -14,6 +14,10 @@ export function getRandomUser() {
   return axios.get("/users/random");
 }
 
+export function getRandomUserFiltered(userFilteredFor) {
+  return axios.get(`/users/random/${userFilteredFor.id}`);
+}
+
 export function getCandidates() {
   return axios.get("/users/shuffle");
 }
