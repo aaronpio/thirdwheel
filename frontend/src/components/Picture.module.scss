@@ -11,4 +11,11 @@
     font-size: 2em;
     color: white;
   }
+
+  .alt_text {
+    position: relative;
+    text-align: center;
+    font-size: 2em;
+    color: $button-text-color;
+  }
 }

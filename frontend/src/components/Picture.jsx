@@ -27,5 +27,3 @@ export default function Picture({ user, text }) {
     </div>
   );
 }
-
-//"Take your pick"
