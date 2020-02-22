@@ -2,7 +2,13 @@ import React, { useState, useEffect } from "react";
 import produce from "immer";
 import MatchmakerGrid from "../components/MatchmakerGrid";
 import MatchmakerSidebar from "../components/MatchmakerSidebar";
-import { getCandidates, getUser, getRandomUser, createMatch } from "../api";
+import {
+  getCandidates,
+  getCandidatesFiltered,
+  getUser,
+  getRandomUser,
+  createMatch
+} from "../api";
 import styles from "./MatchmakerScreen.module.scss";
 
 export default function MatchmakerScreen({ user }) {
@@ -36,6 +42,42 @@ export default function MatchmakerScreen({ user }) {
     });
   };
 
+  const fetchCandidates = user => {
+    setCandidates(new Array(6).fill(null));
+    setLoading(true);
+
+    if (user) {
+      getCandidatesFiltered(user).then(res => {
+        setCandidates(res.data);
+        setLoading(false);
+      });
+    } else {
+      getCandidates().then(res => {
+        setCandidates(res.data);
+        setLoading(false);
+      });
+    }
+  };
+
+  useEffect(() => {
+    shuffle();
+  }, [topPick]);
+
+  const userToFilterFor = () => {
+    let userToFilterFor = null;
+    if (topPick && !bottomPick) {
+      userToFilterFor = topPick;
+    } else if (topPick && bottomPick) {
+      userToFilterFor = topPick;
+    }
+    return userToFilterFor;
+  };
+
+  const shuffle = () => {
+    const user = userToFilterFor();
+    fetchCandidates(user);
+  };
+
   const select = user => {
     if (topPick === null) setTopPick(user);
     else setBottomPick(user);
@@ -55,22 +97,15 @@ export default function MatchmakerScreen({ user }) {
   };
 
   const removeFromSidebar = _user => {
+    if (bottomPick && topPick) {
+      if (_user === bottomPick) setBottomPick(null);
+
+      return;
+    }
+
     if (_user === bottomPick) setBottomPick(null);
     if (_user === topPick) setTopPick(null);
   };
-
-  const fetchCandidates = () => {
-    setCandidates(new Array(6).fill(null));
-    setLoading(true);
-    getCandidates().then(res => {
-      setCandidates(res.data);
-      setLoading(false);
-    });
-  };
-
-  useEffect(() => {
-    fetchCandidates();
-  }, []);
 
   return (
     <>
@@ -79,7 +114,8 @@ export default function MatchmakerScreen({ user }) {
           candidates={candidates}
           select={select}
           selectRemove={selectRemove}
-          shuffle={fetchCandidates}
+          // show_x={showX}
+          shuffle={shuffle}
           loading={loading}
         />
       </main>

@@ -18,6 +18,10 @@ export function getCandidates() {
   return axios.get("/users/shuffle");
 }
 
+export function getCandidatesFiltered(userFilteredFor) {
+  return axios.get(`/users/shuffle/${userFilteredFor.id}`);
+}
+
 export function createMatch(matchmakerId, user1Id, user2Id) {
   return axios.post("/matches/new", { matchmakerId, user1Id, user2Id });
 }
