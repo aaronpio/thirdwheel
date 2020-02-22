@@ -114,7 +114,6 @@ export default function MatchmakerScreen({ user }) {
           candidates={candidates}
           select={select}
           selectRemove={selectRemove}
-          // show_x={showX}
           shuffle={shuffle}
           loading={loading}
         />
