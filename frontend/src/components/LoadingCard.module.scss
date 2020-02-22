@@ -37,6 +37,7 @@
 
 section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 14rem;
@@ -48,4 +49,8 @@ section {
   right: -30%;
   top: -12px;
   background-color: $card-loading-background;
+}
+
+.spacer {
+  height: 0.4rem;
 }

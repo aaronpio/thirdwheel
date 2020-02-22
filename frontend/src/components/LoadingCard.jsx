@@ -9,16 +9,12 @@ const LoadingCard = props => {
         <h2 className="name"></h2>
         <p align="left"> </p>
       </div>
-      <section>{<LoadingAnimation />}</section>
+      <section>
+        <p className={styles.spacer}>hii</p>
+        <LoadingAnimation />
+      </section>
     </li>
   );
-  // return (
-  //   <div className={styles.card}>
-  //     <div className={styles.loading}>
-  //       <LoadingAnimation />
-  //     </div>
-  //   </div>
-  // );
 };
 
 export default LoadingCard;
