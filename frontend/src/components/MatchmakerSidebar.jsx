@@ -14,7 +14,7 @@ export default function MatchmakerSidebar({
       {picks.map((pick, index) => {
         return (
           <div key={index}>
-            <Picture user={pick} />
+            <Picture user={pick} text={"Take your pick"} />
             {pick && (
               <FloatingButton
                 x_picture_button

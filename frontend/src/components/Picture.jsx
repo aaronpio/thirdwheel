@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Picture.module.scss";
 
-export default function Picture({ user }) {
+export default function Picture({ user, text }) {
   const style = {
     backgroundColor: "#FFB9B9",
     backgroundImage: `url(${user?.image_url})`,
@@ -23,7 +23,9 @@ export default function Picture({ user }) {
   return (
     <div className={styles.container}>
       <div style={style}>{!user && "?"}</div>
-      <h2 className={styles.picname}>{user ? user.name : "Take your pick"}</h2>
+      <h2 className={styles.picname}>{user ? user.name : text}</h2>
     </div>
   );
 }
+
+//"Take your pick"
