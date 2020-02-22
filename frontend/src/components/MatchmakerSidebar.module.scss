@@ -1,3 +1,5 @@
+@import "../library";
+
 aside {
   display: flex;
   height: 100vh;
@@ -22,4 +24,26 @@ aside {
     height: 20em;
     margin-bottom: 2em;
   }
+}
+
+@keyframes bounceOut {
+  20% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  50%,
+  55% {
+    opacity: 1;
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+}
+
+.bounceOut {
+  animation-duration: 1s;
+  animation-name: bounceOut;
 }
