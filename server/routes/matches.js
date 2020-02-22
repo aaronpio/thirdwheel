@@ -15,10 +15,19 @@ const matchesRouter = db => {
       .catch(err => console.log(err));
   });
 
+  router.post("/dates/remove/:matchId", function(req, res) {
+    db.query(
+      SQL`DELETE FROM matches WHERE matches.id = ${req.params.matchId}
+      `
+    )
+      .then(() => res.sendStatus(200))
+      .catch(err => console.log("Error Removing Date: ", err));
+  });
+
   router.get("/dates/:id", function(req, res) {
     msleep(500);
     db.query(
-      SQL`SELECT * FROM matches JOIN users u1 ON user1_id = u1.id JOIN users u2 ON user2_id = u2.id WHERE ${req.params.id} = user1_id OR ${req.params.id} = user2_id ORDER BY matches DESC
+      SQL`SELECT matches.id as match_id, * FROM matches JOIN users u1 ON user1_id = u1.id JOIN users u2 ON user2_id = u2.id WHERE ${req.params.id} = user1_id OR ${req.params.id} = user2_id ORDER BY matches DESC
       `
     )
       .then(_res => res.json(_res.rows))

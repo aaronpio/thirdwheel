@@ -3,8 +3,13 @@ import InteractiveDateCard from "./InteractiveDateCard";
 import styles from "./MyDates.module.scss";
 
 const MyDates = props => {
-  const matchmakeeCardComponents = props.myDates.map((user, index) => (
-    <InteractiveDateCard key={user.id} user={user} />
+  const matchmakeeCardComponents = props.myDates.map(date => (
+    <InteractiveDateCard
+      key={date.match_id}
+      matchId={date.match_id}
+      user={date}
+      dismissDate={props.dismissDate}
+    />
   ));
 
   return <ul className={styles.my_dates}>{matchmakeeCardComponents}</ul>;

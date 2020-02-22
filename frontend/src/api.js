@@ -22,6 +22,10 @@ export function createMatch(matchmakerId, user1Id, user2Id) {
   return axios.post("/matches/new", { matchmakerId, user1Id, user2Id });
 }
 
+export function deleteMatch(matchId) {
+  return axios.post(`matches/dates/remove/${matchId}`);
+}
+
 export function getDates(id) {
   return axios.get(`/matches/dates/${id}`);
 }
