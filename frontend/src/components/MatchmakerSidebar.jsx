@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import classNames from "classnames";
 import styles from "./MatchmakerSidebar.module.scss";
 import Picture from "./Picture";
 import FloatingButton from "./FloatingButton";
 import Button from "./Button";
-import { useEffect } from "react";
 
 export default function MatchmakerSidebar({
   picks,
