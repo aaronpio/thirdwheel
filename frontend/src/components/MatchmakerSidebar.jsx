@@ -7,7 +7,8 @@ import Button from "./Button";
 export default function MatchmakerSidebar({
   picks,
   removeFromSidebar,
-  confirmMatch
+  confirmMatch,
+  showTopBtn
 }) {
   const [animate, setAnimate] = useState(false);
 
@@ -21,20 +22,26 @@ export default function MatchmakerSidebar({
 
   return (
     <article className={styles.aside}>
-      {picks.map((pick, index) => {
-        return (
-          <div key={index} className={animate}>
-            <Picture user={pick} text={"Take your pick"} />
-            {pick && (
-              <FloatingButton
-                x_picture_button
-                message={"𝗫"}
-                onClick={() => removeFromSidebar(pick)}
-              />
-            )}
-          </div>
-        );
-      })}
+      <div className={animate}>
+        <Picture user={picks[0]} text={"Take your pick"} />
+        {picks[0] && showTopBtn && (
+          <FloatingButton
+            x_picture_button
+            message={"𝗫"}
+            onClick={() => removeFromSidebar(picks[0])}
+          />
+        )}
+      </div>
+      <div className={animate}>
+        <Picture user={picks[1]} text={"Take your pick"} />
+        {picks[1] && (
+          <FloatingButton
+            x_picture_button
+            message={"𝗫"}
+            onClick={() => removeFromSidebar(picks[1])}
+          />
+        )}
+      </div>
       <Button
         disabled={!(picks[0] && picks[1])}
         onClick={confirmMatchAndAnimate}

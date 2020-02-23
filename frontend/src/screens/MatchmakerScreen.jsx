@@ -35,8 +35,7 @@ export default function MatchmakerScreen({ user }) {
             bottomPick === user ||
             topPick === user
           ) {
-            // retry
-            console.log("duplicate!!");
+            // Not very D-R-Y
           }
           draft[index] = res.data;
         });
@@ -52,8 +51,7 @@ export default function MatchmakerScreen({ user }) {
             bottomPick === user ||
             topPick === user
           ) {
-            // retry
-            console.log("duplicate!!");
+            // Not very D-R-Y
           }
           draft[index] = res.data;
         });
@@ -112,13 +110,18 @@ export default function MatchmakerScreen({ user }) {
     setBottomPick(null);
   };
 
+  const [showTopBtn, setShowTopBtn] = useState(true);
+
+  useEffect(() => {
+    if (bottomPick) setShowTopBtn(false);
+    else setShowTopBtn(true);
+  }, [topPick, bottomPick]);
+
   const removeFromSidebar = _user => {
     if (bottomPick && topPick) {
       if (_user === bottomPick) setBottomPick(null);
-
       return;
     }
-
     if (_user === bottomPick) setBottomPick(null);
     if (_user === topPick) setTopPick(null);
   };
@@ -139,6 +142,7 @@ export default function MatchmakerScreen({ user }) {
           picks={[topPick, bottomPick]}
           removeFromSidebar={removeFromSidebar}
           confirmMatch={confirmMatch}
+          showTopBtn={showTopBtn}
         />
       </aside>
     </>

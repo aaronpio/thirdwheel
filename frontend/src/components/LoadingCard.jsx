@@ -10,7 +10,7 @@ const LoadingCard = props => {
         <p align="left"> </p>
       </div>
       <section>
-        <p className={styles.spacer}>hii</p>
+        <p className={styles.spacer}></p>
         <LoadingAnimation />
       </section>
     </li>
