@@ -21,11 +21,23 @@
     flex-direction: column;
     padding: 1em;
 
-    h2 {
-      font-size: 2rem;
-      padding-left: 0.5em;
-      margin: 0;
-      color: $card-text-color;
+    header {
+      h2 {
+        font-size: 2rem;
+        padding-left: 0.5em;
+        margin: 0;
+        color: $card-text-color;
+      }
+
+      .img_symbol {
+        height: 1em;
+        width: 1em;
+        border-radius: 0;
+        left: 10.5em;
+        top: 0.6em;
+        box-shadow: none;
+        border: 0;
+      }
     }
 
     p {
