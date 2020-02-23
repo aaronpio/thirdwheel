@@ -38,9 +38,6 @@ export default function LoginScreen({ setUserAndLocalStorage }) {
           </Button>
         </form>
       </main>
-      <aside className={styles.login_sidebar}>
-        <LoginSidebar />
-      </aside>
     </>
   );
 }
