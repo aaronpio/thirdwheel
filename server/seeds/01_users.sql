@@ -95,7 +95,6 @@ INSERT INTO users
 (37 , 1       ,        'Roland'     ,            'password'              ,    'roland@example.com'     ,             'https://randomuser.me/api/portraits/men/12.jpg'     ,  100                                           , 'Lorem ipsum dolor sit amet. Lumbersexual polaroid mustache gravy magic muggle vaporwave. Lo-fi urban exploration knitting off-grid unique beets.', TRUE      , 'Montreal'),
 (29 , 1       ,        'Roy'        ,            'password'              ,    'roy@example.com'        ,                'https://randomuser.me/api/portraits/men/2.jpg'   ,   100                                          , 'Lorem ipsum dolor sit amet. Lumbersexual polaroid mustache gravy magic muggle vaporwave. Lo-fi urban exploration knitting off-grid unique beets.', TRUE      , 'Montreal'),
 (36 , 1       ,        'Ruben'      ,            'password'              ,    'ruben@example.com'      ,              'https://randomuser.me/api/portraits/men/17.jpg'    ,  100                                           , 'Lorem ipsum dolor sit amet. Lumbersexual polaroid mustache gravy magic muggle vaporwave. Lo-fi urban exploration knitting off-grid unique beets.', TRUE      , 'Montreal'),
-(23 , 3       ,        'Russell'    ,            'password'              ,    'russell@example.com'    ,            'https://randomuser.me/api/portraits/men/27.jpg'      ,  100                                           , 'Lorem ipsum dolor sit amet. Lumbersexual polaroid mustache gravy magic muggle vaporwave. Lo-fi urban exploration knitting off-grid unique beets.', TRUE      , 'Montreal'),
 (24 , 3       ,        'Samuel'     ,            'password'              ,    'samuel@example.com'     ,             'https://randomuser.me/api/portraits/men/76.jpg'     ,  100                                           , 'Lorem ipsum dolor sit amet. Lumbersexual polaroid mustache gravy magic muggle vaporwave. Lo-fi urban exploration knitting off-grid unique beets.', TRUE      , 'Montreal'),
 (40 , 3       ,        'Sebastian'  ,            'password'              ,    'sebastian@example.com'  ,          'https://randomuser.me/api/portraits/men/96.jpg'        ,  100                                           , 'Lorem ipsum dolor sit amet. Lumbersexual polaroid mustache gravy magic muggle vaporwave. Lo-fi urban exploration knitting off-grid unique beets.', TRUE      , 'Montreal'),
 (27 , 3       ,        'Seth'       ,            'password'              ,    'seth@example.com'       ,               'https://randomuser.me/api/portraits/men/84.jpg'   ,  100                                           , 'Lorem ipsum dolor sit amet. Lumbersexual polaroid mustache gravy magic muggle vaporwave. Lo-fi urban exploration knitting off-grid unique beets.', TRUE      , 'Montreal'),
@@ -460,6 +459,5 @@ INSERT INTO sexual_preferences (user_id, gender_id) VALUES
 (225, 1),
 (226, 1),
 (227, 1),
-(228, 1),
-(229, 1)
+(228, 1)
 ;
