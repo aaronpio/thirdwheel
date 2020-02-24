@@ -4,12 +4,10 @@ import ChatBar from "../components/ChatBar";
 import ProfileSidebar from "../components/ProfileSidebar";
 import styles from "./ChatScreen.scss";
 
-const date = { id: 100 };
 export default function ChatScreen({ user, socket, setUser }) {
-  const [messages, setMessages] = useState([
-    { text: "Hi", user },
-    { text: "Hey wuza", user: date }
-  ]);
+  const [messages, setMessages] = useState([]);
+
+  const [date, setDate] = useState(null);
 
   useEffect(() => {
     socket.on("receive msg", msg => {
@@ -23,11 +21,20 @@ export default function ChatScreen({ user, socket, setUser }) {
     setMessages(prev => [...prev, msg]);
   };
 
+  useEffect(() => {
+    setDate(JSON.parse(localStorage.getItem("date")));
+  }, []);
+
   return (
     <>
       <main className={styles.grid}>
-        <Chat user={user} messages={messages} className={styles.messages} />
-        <ChatBar sendMsg={sendMsg}/>
+        <Chat
+          user={user}
+          messages={messages}
+          className={styles.messages}
+          date={{ ...date }}
+        />
+        <ChatBar sendMsg={sendMsg} />
       </main>
       <aside>
         <ProfileSidebar user={user} setUser={setUser} />

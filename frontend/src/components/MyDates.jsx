@@ -9,6 +9,7 @@ const MyDates = props => {
       matchId={date.match_id}
       user={date}
       dismissDate={props.dismissDate}
+      storeActiveDate={props.storeActiveDate}
     />
   ));
 

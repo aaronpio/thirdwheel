@@ -11,7 +11,6 @@ export default function MyDatesScreen({ logout, user }) {
 
   const fetchDates = user => {
     getDates(user.id).then(res => {
-      console.log(res.data);
       setDates(res.data);
       setLoading(false);
     });
@@ -27,6 +26,10 @@ export default function MyDatesScreen({ logout, user }) {
     fetchDates(user);
   }, []);
 
+  const storeActiveDate = date => {
+    localStorage.setItem("date", JSON.stringify(date));
+  };
+
   return (
     <>
       <main className={styles.my_dates_screen}>
@@ -36,7 +39,12 @@ export default function MyDatesScreen({ logout, user }) {
             <LoadingAnimation large />
           </div>
         ) : (
-          <MyDates user={user} myDates={dates} dismissDate={dismissDate} />
+          <MyDates
+            user={user}
+            myDates={dates}
+            dismissDate={dismissDate}
+            storeActiveDate={storeActiveDate}
+          />
         )}
       </main>
       <aside>

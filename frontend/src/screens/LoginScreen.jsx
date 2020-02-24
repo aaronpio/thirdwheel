@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Button from "../components/Button";
-import LoginSidebar from "../components/LoginSidebar";
 import styles from "./LoginScreen.module.scss";
 import { login } from "../api";
 
