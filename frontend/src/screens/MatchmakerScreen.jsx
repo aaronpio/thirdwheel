@@ -5,7 +5,6 @@ import MatchmakerSidebar from "../components/MatchmakerSidebar";
 import {
   getCandidates,
   getCandidatesFiltered,
-  getUser,
   getRandomUser,
   getRandomUserFiltered,
   createMatch
@@ -126,9 +125,45 @@ export default function MatchmakerScreen({ user }) {
     if (_user === topPick) setTopPick(null);
   };
 
+  const genderIcons = userGender => {
+    let gender_image;
+    switch (userGender) {
+      case 1:
+        gender_image = "M-symbol.png";
+        break;
+      case 2:
+        gender_image = "F-symbol.png";
+        break;
+      case 3:
+        gender_image = "NB-symbol.png";
+        break;
+    }
+    return gender_image;
+  };
+
+  let topPickGenderIcon;
+
+  // useEffect(() => {
+  //   if (topPick) {
+  //     topPickGenderIcon = genderIcons(topPick.gender_id);
+  //     let topPickGenderLookingForIcon = genderIcons(topPick.gender_id);
+  //   }
+  // }, [topPick]);
+
   return (
     <>
       <main className={styles.main}>
+        {topPick ? (
+          <div className={styles.filter_line}>
+            <img src={topPickGenderIcon} />
+            <h2>{`${topPick.name} Identifies As `}</h2>
+            <img
+              className={styles.img_symbol}
+              src={genderIcons(topPick.gender_id)}
+            />
+            <h2>{`And Is Seeking`}</h2>
+          </div>
+        ) : null}
         <MatchmakerGrid
           candidates={candidates}
           select={select}

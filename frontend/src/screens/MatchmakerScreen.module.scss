@@ -1,1 +1,26 @@
+@import "../library.scss";
 
+.filter_line {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15), -2px 0px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.8rem;
+  width: 82em;
+  margin: 1em auto;
+  margin-bottom: 0;
+
+  background: $card-background-color;
+}
+
+.img_symbol {
+  position: relative;
+  height: 2em;
+  width: 2em;
+  border-radius: 0;
+  margin: 1em;
+  left: 0em;
+  top: 0em;
+  box-shadow: none;
+  border: 0;
+}
