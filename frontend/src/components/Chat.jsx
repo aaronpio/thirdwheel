@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Chat.module.scss";
 
 export default function Chat({ user, messages, date }) {
-  //console.log("image url: ", date.image_url);
   return (
     <>
       <div className={styles.chat}>
