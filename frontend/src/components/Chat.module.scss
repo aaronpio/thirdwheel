@@ -1,3 +1,5 @@
+@import "../library.scss";
+
 .chat {
   display: flex;
   height: auto;
@@ -29,4 +31,28 @@
 .right {
   text-align: right;
   align-self: flex-end;
+}
+
+.date_information {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  height: 5em;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15), -2px 0px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.8rem;
+
+  background: $card-background-color;
+
+  .image {
+    display: block;
+    position: relative;
+    height: 3.5em;
+    width: 3.5em;
+    left: 0em;
+    top: 0em;
+    margin-right: 2em;
+    margin-left: 2em;
+  }
 }
