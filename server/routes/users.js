@@ -35,12 +35,23 @@ const userRouter = db => {
       .catch(err => console.log(err));
   });
 
+  router.get("/:id/preference", async function(req, res) {
+    db.query(
+      `SELECT gender_id FROM sexual_preferences WHERE user_id = ${req.params.id}`
+    )
+      .then(cursor => {
+        const user = cursor.rows[0];
+        res.json(user);
+      })
+      .catch(err => console.log(err));
+  });
+
   router.get("/:id", async function(req, res) {
     msleep(500);
     db.query(`SELECT * FROM users WHERE id = ${req.params.id}`)
       .then(cursor => {
         const user = cursor.rows[0];
-        user.sexualPreferences = prefsCursor.rows;
+        user.sexualPreferences = cursor.rows;
         console.log(user);
         res.json(user);
       })

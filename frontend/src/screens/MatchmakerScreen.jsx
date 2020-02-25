@@ -7,7 +7,8 @@ import {
   getCandidatesFiltered,
   getRandomUser,
   getRandomUserFiltered,
-  createMatch
+  createMatch,
+  getGenderPreference
 } from "../api";
 import styles from "./MatchmakerScreen.module.scss";
 
@@ -90,7 +91,9 @@ export default function MatchmakerScreen({ user }) {
 
   const select = user => {
     if (topPick === null) {
+      setGenderPreference(null);
       setTopPick(user);
+
       shuffle(user);
       return;
     } else setBottomPick(user);
@@ -143,20 +146,22 @@ export default function MatchmakerScreen({ user }) {
 
   let topPickGenderIcon;
 
-  // useEffect(() => {
-  //   if (topPick) {
-  //     topPickGenderIcon = genderIcons(topPick.gender_id);
-  //     let topPickGenderLookingForIcon = genderIcons(topPick.gender_id);
-  //   }
-  // }, [topPick]);
+  const [genderPreference, setGenderPreference] = useState(null);
 
-  const singleCandidate = { ...candidates[0] };
+  useEffect(() => {
+    if (topPick) {
+      getGenderPreference(topPick).then(res => {
+        console.log(res.data);
+        setGenderPreference(res.data.gender_id);
+      });
+    }
+  }, [topPick]);
 
   return (
     <>
       <main className={styles.main}>
         <div className={styles.filter_line}>
-          {topPick && candidates ? (
+          {genderPreference && topPick ? (
             <>
               <img src={topPickGenderIcon} />
               <h2>{`${topPick.name} Identifies As `}</h2>
@@ -167,7 +172,7 @@ export default function MatchmakerScreen({ user }) {
               <h2>{`And Is Seeking`}</h2>
               <img
                 className={styles.img_symbol}
-                src={genderIcons(singleCandidate.gender_id)}
+                src={genderIcons(genderPreference)}
               />
             </>
           ) : (
