@@ -23,6 +23,7 @@ export default function App() {
   const logoutAndDeleteLocalStorage = () => {
     localStorage.removeItem("user");
     setUser(null);
+    window.location = "/"
   };
 
   useEffect(() => {
@@ -33,7 +34,9 @@ export default function App() {
     <Router>
       {!user ? (
         <Switch>
-          <LoginScreen setUserAndLocalStorage={setUserAndLocalStorage} />}
+          <Route path="/">
+            <LoginScreen setUserAndLocalStorage={setUserAndLocalStorage} />}
+          </Route>
         </Switch>
       ) : (
         <>
@@ -67,7 +70,7 @@ export default function App() {
               />
             </Route>
             <Route path="/">
-              <ProfileScreen user={user} logout={logoutAndDeleteLocalStorage} />
+              <MatchmakerScreen user={user} />
             </Route>
           </Switch>
         </>
