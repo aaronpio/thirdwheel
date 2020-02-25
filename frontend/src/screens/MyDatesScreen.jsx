@@ -11,7 +11,29 @@ export default function MyDatesScreen({ logout, user }) {
 
   const fetchDates = user => {
     getDates(user.id).then(res => {
-      setDates(res.data);
+      const dates = [];
+      for (const d of res.data) {
+        let date;
+        if (user.id === d.id1) {
+          date = {
+            id: d.id2,
+            name: d.name2,
+            gender_id: d.gender_id2,
+            bio: d.bio2,
+            image_url: d.image_url2
+          };
+        } else {
+          date = {
+            id: d.id1,
+            name: d.name1,
+            gender_id: d.gender_id1,
+            bio: d.bio1,
+            image_url: d.image_url1
+          };
+        }
+        dates.push(date);
+      }
+      setDates(dates);
       setLoading(false);
     });
   };
