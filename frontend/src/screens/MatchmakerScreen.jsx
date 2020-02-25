@@ -157,8 +157,6 @@ export default function MatchmakerScreen({ user }) {
     }
   }, [topPick]);
 
-  const singleCandidate = { ...candidates[0] };
-
   return (
     <>
       <main className={styles.main}>
