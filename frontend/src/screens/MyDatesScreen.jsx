@@ -31,6 +31,7 @@ export default function MyDatesScreen({ logout, user }) {
             image_url: d.image_url1
           };
         }
+        date.match_id = d.match_id;
         dates.push(date);
       }
       setDates(dates);
@@ -40,8 +41,8 @@ export default function MyDatesScreen({ logout, user }) {
 
   const dismissDate = matchId => {
     console.log("React dismiss date function, match_id: ", matchId);
+    setDates(prev => prev.filter(date => date.match_id !== matchId));
     deleteMatch(matchId);
-    fetchDates(user);
   };
 
   useEffect(() => {
