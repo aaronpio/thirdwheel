@@ -13,7 +13,8 @@
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.15), -2px 0px 8px rgba(0, 0, 0, 0.1);
 
   &:hover {
-    box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.1), -6px 0px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.1),
+      -6px 0px 12px rgba(0, 0, 0, 0.1);
   }
 
   div {
@@ -51,6 +52,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       color: $card-text-color;
+      font-size: 1.2em;
     }
   }
 }

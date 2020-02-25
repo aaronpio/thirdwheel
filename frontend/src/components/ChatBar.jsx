@@ -6,6 +6,7 @@ export default function ChatBar({ sendMsg }) {
   const [text, setText] = useState("");
 
   return (
+  <div className={styles.container}>
     <form
       id="chat"
       className={styles.form}
@@ -30,5 +31,6 @@ export default function ChatBar({ sendMsg }) {
         Send
       </Button>
     </form>
+    </div>
   );
 }
