@@ -21,7 +21,7 @@ export default function MatchmakerSidebar({
   };
 
   return (
-    <article className={styles.aside}>
+    <article className={"sidebar-bg " + styles.aside}>
       <div className={animate}>
         <Picture user={picks[0]} text={"Take your pick"} />
         {picks[0] && showTopBtn && (

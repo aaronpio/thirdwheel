@@ -7,12 +7,12 @@ aside {
   justify-content: flex-start;
   align-content: center;
   align-items: center;
-  padding-top: 12em;
+  padding: 3em 0.5em;
 
   article {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: center;
   }
 

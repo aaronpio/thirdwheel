@@ -5,7 +5,7 @@ import Picture from "./Picture";
 
 export default function ProfileSidebar({ logout, user }) {
   return (
-    <div className={styles.profile_sidebar}>
+    <div className={"sidebar-bg " + styles.profile_sidebar}>
       <Picture user={user} />
       <div className={styles.profile_links}>
         <Link to="/dates">

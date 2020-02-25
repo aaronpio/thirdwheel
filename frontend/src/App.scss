@@ -2,7 +2,7 @@
 
 #root {
   display: grid;
-  grid-template-columns: auto 4fr;
+  grid-template-columns: 300px auto;
   grid-template-rows: 96px auto;
   grid-template-areas:
     "sidebar nav"
@@ -14,11 +14,21 @@ nav {
 }
 
 aside {
+  position: relative;
   grid-area: sidebar;
-  background-color: $sidebar-color;
-  border-right: 1px solid #dddddd;
-  background-image: $svg-pattern;
   width: 300px;
+
+  .sidebar-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    min-height: 100vh;
+    padding-top: 6em;
+    background-color: $sidebar-color;
+    border-right: 1px solid #dddddd;
+    background-image: $svg-pattern;
+  }
 }
 
 main {
