@@ -13,6 +13,7 @@ import { getUser } from "./api";
 
 export default function App() {
   const [user, setUser] = useState(null);
+  const [date, setDate] = useState(null);
 
   const setUserAndLocalStorage = user => {
     localStorage.setItem("user", JSON.stringify(user));
@@ -30,39 +31,46 @@ export default function App() {
 
   return (
     <Router>
-      <Nav user={user} />
       {!user ? (
         <Switch>
           <LoginScreen setUserAndLocalStorage={setUserAndLocalStorage} />}
         </Switch>
       ) : (
-        <Switch>
-          <Route path="/profile">
-            <ProfileScreen user={user} logout={logoutAndDeleteLocalStorage} />
-          </Route>
-          <Route path="/dates">
-            <MyDatesScreen user={user} logout={logoutAndDeleteLocalStorage} />
-          </Route>
-          <Route path="/matches">
-            <MatchesMadeScreen
-              user={user}
-              logout={logoutAndDeleteLocalStorage}
-            />
-          </Route>
-          <Route path="/matchmaker">
-            <MatchmakerScreen user={user} />
-          </Route>
-          <Route path="/chat">
-            <ChatScreen
-              user={user}
-              socket={socketIOClient("localhost:3002")}
-              setUser={setUser}
-            />
-          </Route>
-          <Route path="/">
-            <ProfileScreen user={user} logout={logoutAndDeleteLocalStorage} />
-          </Route>
-        </Switch>
+        <>
+          <Nav user={user} />
+          <Switch>
+            <Route path="/profile">
+              <ProfileScreen user={user} logout={logoutAndDeleteLocalStorage} />
+            </Route>
+            <Route path="/dates">
+              <MyDatesScreen
+                user={user}
+                setDate={setDate}
+                logout={logoutAndDeleteLocalStorage}
+              />
+            </Route>
+            <Route path="/matches">
+              <MatchesMadeScreen
+                user={user}
+                logout={logoutAndDeleteLocalStorage}
+              />
+            </Route>
+            <Route path="/matchmaker">
+              <MatchmakerScreen user={user} />
+            </Route>
+            <Route path="/chat">
+              <ChatScreen
+                user={user}
+                date={date}
+                socket={socketIOClient("localhost:3002")}
+                setUser={setUser}
+              />
+            </Route>
+            <Route path="/">
+              <ProfileScreen user={user} logout={logoutAndDeleteLocalStorage} />
+            </Route>
+          </Switch>
+        </>
       )}
     </Router>
   );

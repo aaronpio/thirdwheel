@@ -8,7 +8,7 @@ export default function LoginScreen({ setUserAndLocalStorage }) {
   const [password, setPassword] = useState("");
   return (
     <>
-      <main className={styles.screen}>
+      <main className={styles.main}>
         <h1 className={styles.logo}>ThirdWheel</h1>
         <form className={styles.form} action="/api/session/login" method="POST">
           <h1>Sign In For Love</h1>
