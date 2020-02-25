@@ -155,21 +155,25 @@ export default function MatchmakerScreen({ user }) {
   return (
     <>
       <main className={styles.main}>
-        {topPick ? (
-          <div className={styles.filter_line}>
-            <img src={topPickGenderIcon} />
-            <h2>{`${topPick.name} Identifies As `}</h2>
-            <img
-              className={styles.img_symbol}
-              src={genderIcons(topPick.gender_id)}
-            />
-            <h2>{`And Is Seeking`}</h2>
-            <img
-              className={styles.img_symbol}
-              src={genderIcons(singleCandidate.gender_id)}
-            />
-          </div>
-        ) : null}
+        <div className={styles.filter_line}>
+          {topPick && candidates ? (
+            <>
+              <img src={topPickGenderIcon} />
+              <h2>{`${topPick.name} Identifies As `}</h2>
+              <img
+                className={styles.img_symbol}
+                src={genderIcons(topPick.gender_id)}
+              />
+              <h2>{`And Is Seeking`}</h2>
+              <img
+                className={styles.img_symbol}
+                src={genderIcons(singleCandidate.gender_id)}
+              />
+            </>
+          ) : (
+            <h2>Select A Dater</h2>
+          )}
+        </div>
         <MatchmakerGrid
           candidates={candidates}
           select={select}
