@@ -18,6 +18,7 @@ export default function MyDatesScreen({ logout, user }) {
           date = {
             id: d.id2,
             name: d.name2,
+            age: d.age2,
             gender_id: d.gender_id2,
             bio: d.bio2,
             image_url: d.image_url2
@@ -26,6 +27,7 @@ export default function MyDatesScreen({ logout, user }) {
           date = {
             id: d.id1,
             name: d.name1,
+            age: d.age1,
             gender_id: d.gender_id1,
             bio: d.bio1,
             image_url: d.image_url1
