@@ -12,6 +12,7 @@ export default function Nav({ user }) {
           </Link>
           <div>
             <Link to="/matchmaker">Matchmaker</Link>
+            <Link to="/dates">My Dates</Link>
             <Link to="/profile">My Profile</Link>
           </div>
         </>
