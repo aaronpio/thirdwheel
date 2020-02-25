@@ -41,3 +41,7 @@ export function getDates(id) {
 export function getMatches(id) {
   return axios.get(`/matches/${id}`);
 }
+
+export function getGenderPreference(user) {
+  return axios.get(`./users/${user.id}/preference`);
+}
