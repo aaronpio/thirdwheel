@@ -150,6 +150,8 @@ export default function MatchmakerScreen({ user }) {
   //   }
   // }, [topPick]);
 
+  const singleCandidate = { ...candidates[0] };
+
   return (
     <>
       <main className={styles.main}>
@@ -162,6 +164,10 @@ export default function MatchmakerScreen({ user }) {
               src={genderIcons(topPick.gender_id)}
             />
             <h2>{`And Is Seeking`}</h2>
+            <img
+              className={styles.img_symbol}
+              src={genderIcons(singleCandidate.gender_id)}
+            />
           </div>
         ) : null}
         <MatchmakerGrid
