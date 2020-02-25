@@ -27,7 +27,7 @@ const matchesRouter = db => {
   router.get("/dates/:id", function(req, res) {
     msleep(500);
     db.query(
-      SQL`SELECT matches.id as match_id, * FROM matches JOIN users u1 ON user1_id = u1.id JOIN users u2 ON user2_id = u2.id WHERE ${req.params.id} = user1_id OR ${req.params.id} = user2_id ORDER BY matches DESC
+      SQL`SELECT matches.id as match_id, u1.name as name1, u1.gender_id as gender_id1, u1.bio as bio1, u1.image_url as image_url1, u2.name as name2, u2.gender_id as gender_id2, u2.bio as bio2, u2.image_url as image_url2 FROM matches JOIN users u1 ON user1_id = u1.id JOIN users u2 ON user2_id = u2.id WHERE ${req.params.id} = user1_id OR ${req.params.id} = user2_id ORDER BY matches DESC
       `
     )
       .then(_res => res.json(_res.rows))
