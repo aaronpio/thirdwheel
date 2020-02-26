@@ -25,15 +25,16 @@ export default function ChatScreen({ user, socket, setUser }) {
     setDate(JSON.parse(localStorage.getItem("date")));
   }, []);
 
+  const style = {
+    display: "flex",
+    flexDirection: "column",
+    height: "calc(96px - 100vh)"
+  };
+
   return (
     <>
-      <main className={styles.grid}>
-        <Chat
-          user={user}
-          messages={messages}
-          className={styles.messages}
-          date={{ ...date }}
-        />
+      <main style={style}>
+        <Chat user={user} messages={messages} date={{ ...date }} />
         <ChatBar sendMsg={sendMsg} />
       </main>
       <aside>

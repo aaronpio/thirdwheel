@@ -4,11 +4,13 @@
   display: flex;
   height: auto;
   max-width: 1000px;
+  width: 85%;
   margin: 3rem auto;
   padding: 1rem;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   flex-direction: column;
+  flex-grow: 2;
   overflow-y: auto;
 }
 

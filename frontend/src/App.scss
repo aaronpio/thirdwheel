@@ -1,5 +1,9 @@
 @import "./library";
 
+* {
+  box-sizing: border-box;
+}
+
 #root {
   display: grid;
   grid-template-columns: 300px auto;
