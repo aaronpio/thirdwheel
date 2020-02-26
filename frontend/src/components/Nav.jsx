@@ -10,7 +10,7 @@ export default function Nav({ user }) {
           <Link to="/profile">
             <h1 className={styles.logo}>ThirdWheel</h1>
           </Link>
-          <div>
+          <div className={styles.links}>
             <Link to="/matchmaker">Matchmaker</Link>
             <Link to="/matches">Matches Made</Link>
             <Link to="/dates">My Dates</Link>

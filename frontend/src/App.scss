@@ -13,6 +13,10 @@ nav {
   grid-area: nav;
 }
 
+a {
+  text-decoration: none;
+}
+
 aside {
   position: relative;
   grid-area: sidebar;
