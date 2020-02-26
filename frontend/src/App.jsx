@@ -67,6 +67,7 @@ export default function App() {
                 date={date}
                 socket={socketIOClient("localhost:3002")}
                 setUser={setUser}
+                logout={logoutAndDeleteLocalStorage}
               />
             </Route>
             <Route path="/">
