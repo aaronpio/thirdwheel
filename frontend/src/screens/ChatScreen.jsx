@@ -4,7 +4,7 @@ import ChatBar from "../components/ChatBar";
 import ProfileSidebar from "../components/ProfileSidebar";
 import styles from "./ChatScreen.scss";
 
-export default function ChatScreen({ user, socket, setUser }) {
+export default function ChatScreen({ user, socket, setUser, logout }) {
   const [messages, setMessages] = useState([]);
 
   const [date, setDate] = useState(null);
@@ -37,7 +37,7 @@ export default function ChatScreen({ user, socket, setUser }) {
         <ChatBar sendMsg={sendMsg} />
       </main>
       <aside>
-        <ProfileSidebar user={user} setUser={setUser} />
+        <ProfileSidebar user={user} setUser={setUser} logout={logout} />
       </aside>
     </>
   );
