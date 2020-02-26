@@ -14,15 +14,16 @@ nav {
   }
 
   * {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     font-weight: bold;
     text-decoration: none;
   }
   .logo {
     margin-left: 1em;
+    margin-right: 0em;
     font-style: italic;
     font-weight: bold;
-    font-size: 48px;
+    font-size: 42px;
     letter-spacing: 0.03em;
     color: $logo-color;
     text-shadow: -2px -4px 0px $logo-shadow1-color,
